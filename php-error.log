@@ -1,0 +1,36 @@
+[27-May-2025 10:53:43 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #3 cannot be passed by reference in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php:94
+Stack trace:
+#0 {main}
+  thrown in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php on line 94
+[27-May-2025 11:02:11 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #3 cannot be passed by reference in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php:83
+Stack trace:
+#0 {main}
+  thrown in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php on line 83
+[27-May-2025 11:08:40 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #3 cannot be passed by reference in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php:83
+Stack trace:
+#0 {main}
+  thrown in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php on line 83
+[27-May-2025 11:12:04 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #3 cannot be passed by reference in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php:83
+Stack trace:
+#0 {main}
+  thrown in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php on line 83
+[27-May-2025 11:15:54 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #3 cannot be passed by reference in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php:83
+Stack trace:
+#0 {main}
+  thrown in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php on line 83
+[27-May-2025 11:22:04 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #3 cannot be passed by reference in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php:84
+Stack trace:
+#0 {main}
+  thrown in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php on line 84
+[27-May-2025 11:31:41 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #3 cannot be passed by reference in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php:84
+Stack trace:
+#0 {main}
+  thrown in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php on line 84
+[27-May-2025 11:31:46 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #3 cannot be passed by reference in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php:84
+Stack trace:
+#0 {main}
+  thrown in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php on line 84
+[27-May-2025 11:31:50 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #3 cannot be passed by reference in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php:84
+Stack trace:
+#0 {main}
+  thrown in C:\newxampp\htdocs\QMS-ASIANAVIS\backend\applicant.php on line 84
