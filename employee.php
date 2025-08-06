@@ -10,23 +10,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-// Database configuration
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "hrms";
 
-// Create connection
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+
 if ($conn->connect_error) {
     http_response_code(500);
     echo json_encode(['success' => false, 'message' => 'Connection failed: ' . $conn->connect_error]);
     exit();
 }
 
-// Handle GET request - Load employees
+
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $action = $_GET['action'] ?? '';
     
@@ -53,20 +53,32 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     exit();
 }
 
-// Handle POST request - Add employee
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $action = $_GET['action'] ?? '';
+    $input = json_decode(file_get_contents('php://input'), true);
+if ($action === 'get' && isset($input['email']) && !empty($input['email'])) {
+    $email = trim($input['email']);
+    $sql = "SELECT signup.accid, signup.email, signup.password, employees.* FROM signup INNER JOIN employees ON signup.email = employees.email WHERE signup.email = '" . $conn->real_escape_string($email) . "'";
+    $result = $conn->query($sql);
+    if ($result && $result->num_rows > 0) {
+        $employee = $result->fetch_assoc();
+        echo json_encode([$employee]);
+    } else {
+        http_response_code(404);
+        echo json_encode(['error' => 'Walang data na nahanap para sa email na ito']);
+    }
+    $conn->close();
+    exit();
+}
     
-    // Create uploads directory if it doesn't exist
     $upload_dir = "uploads/";
     if (!file_exists($upload_dir)) {
         mkdir($upload_dir, 0777, true);
     }
-    
-    // Handle file uploads
     $profile_picture = "";
     $resume_file = "";
-    
-    // Handle profile picture upload
     if (isset($_FILES['ProfilePicture']) && $_FILES['ProfilePicture']['error'] == 0) {
         $allowed_image_types = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
         if (in_array($_FILES['ProfilePicture']['type'], $allowed_image_types)) {
@@ -83,8 +95,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
     }
-    
-    // Handle resume file upload
     if (isset($_FILES['ResumeFile']) && $_FILES['ResumeFile']['error'] == 0) {
         $allowed_doc_types = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
         if (in_array($_FILES['ResumeFile']['type'], $allowed_doc_types)) {
@@ -101,8 +111,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
     }
-    
-    // Get and validate form data
     $first_name = trim($_POST['firstName'] ?? '');
     $last_name = trim($_POST['lastName'] ?? '');
     $email = trim($_POST['email'] ?? '');
@@ -120,8 +128,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $city = trim($_POST['city'] ?? '');
     $state = trim($_POST['state'] ?? '');
     $zip = trim($_POST['zip'] ?? '');
-    
-    // Basic validation
     $required_fields = [
         'firstName' => $first_name,
         'lastName' => $last_name,
@@ -140,33 +146,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'state' => $state,
         'zip' => $zip
     ];
-    
     foreach ($required_fields as $field_name => $field_value) {
         if (empty($field_value)) {
             echo json_encode(['success' => false, 'message' => "Field '$field_name' is required"]);
             exit();
         }
     }
-    
-    // Validate email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo json_encode(['success' => false, 'message' => 'Invalid email address']);
         exit();
     }
-    
-    // Validate salary is numeric
     if (!is_numeric($salary) || $salary < 0) {
         echo json_encode(['success' => false, 'message' => 'Salary must be a valid positive number']);
         exit();
     }
-    
-    // Check if employee ID already exists
     $check_sql = "SELECT idNumber FROM employees WHERE idNumber = ?";
     $check_stmt = $conn->prepare($check_sql);
     $check_stmt->bind_param("s", $id_number);
     $check_stmt->execute();
     $check_result = $check_stmt->get_result();
-    
     if ($check_result->num_rows > 0) {
         echo json_encode(['success' => false, 'message' => 'Employee ID already exists']);
         $check_stmt->close();
@@ -174,24 +172,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
     $check_stmt->close();
-    
-    // Insert employee data - matching your database column names exactly
     $sql = "INSERT INTO employees (
         idNumber, FirstName, LastName, Position, Department, employeeType, 
         gender, hireDate, birthDate, email, phone, street1, street2, 
         city, state, zip, ProfilePicture, ResumeFile, salary
     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    
     $stmt = $conn->prepare($sql);
-    
     if (!$stmt) {
         echo json_encode(['success' => false, 'message' => 'Prepare failed: ' . $conn->error]);
         exit();
     }
-    
-    // Convert salary to decimal for database
     $salary_decimal = floatval($salary);
-    
     $stmt->bind_param(
         "ssssssssssssssssssd", 
         $id_number, $first_name, $last_name, $position, $department, 
@@ -199,7 +190,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $phone, $street1, $street2, $city, $state, $zip, 
         $profile_picture, $resume_file, $salary_decimal
     );
-    
     if ($stmt->execute()) {
         echo json_encode([
             'success' => true, 
@@ -209,7 +199,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo json_encode(['success' => false, 'message' => 'Error inserting employee: ' . $stmt->error]);
     }
-    
     $stmt->close();
 }
 

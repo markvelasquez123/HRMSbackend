@@ -9,10 +9,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-$host = 'localhost';      // change if different
+$host = 'localhost'; 
 $dbname = 'hrms';
-$username = 'root';       // change if different
-$password = '';           // change if different
+$username = 'root';       
+$password = '';          
 
 $conn = new mysqli($host, $username, $password, $dbname);
 
