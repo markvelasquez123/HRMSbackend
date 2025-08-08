@@ -36,8 +36,9 @@ $email = $conn->real_escape_string($data['email']);
 $password = $conn->real_escape_string($data['password']);
 $companyId = $conn->real_escape_string($data['companyId']);
 
+
 // Use prepared statement to insert into the signup table
-$stmt = $conn->prepare("INSERT INTO signup (fullname, email, password, company_id) VALUES (?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO signup (fullname, email, password, company_id) VALUES (?, ?, ?, ?, ?)");
 if ($stmt === false) {
     echo json_encode(['success' => false, 'message' => 'Prepare failed: ' . $conn->error]);
     exit();

@@ -72,6 +72,7 @@ if ($action === 'get' && isset($input['email']) && !empty($input['email'])) {
     $conn->close();
     exit();
 }
+
     
     $upload_dir = "uploads/";
     if (!file_exists($upload_dir)) {
