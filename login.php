@@ -20,7 +20,7 @@ if ($conn->connect_error) {
     exit();
 }
 
-// Get POSTed JSON data
+
 $data = json_decode(file_get_contents("php://input"), true);
 
 if (!$data || !isset($data['email'], $data['password'])) {
@@ -31,7 +31,7 @@ if (!$data || !isset($data['email'], $data['password'])) {
 $email = $data['email'];
 $password = $data['password'];
 
-// Use prepared statement to select user by email
+
 $stmt = $conn->prepare("SELECT email, password FROM signup WHERE email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
@@ -40,8 +40,7 @@ $result = $stmt->get_result();
 if ($result->num_rows === 1) {
     $user = $result->fetch_assoc();
     
-    // For demonstration, comparing plain text passwords
-    // If you hashed passwords in signup, use password_verify here
+    
     if ($password === $user['password']) {
         echo json_encode(['success' => true, 'message' => 'Login successful', 'email' => $user['email']]);
     } else {

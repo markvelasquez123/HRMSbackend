@@ -10,15 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "hrms";
 
-
 $conn = new mysqli($servername, $username, $password, $dbname);
-
 
 if ($conn->connect_error) {
     http_response_code(500);
@@ -26,14 +23,13 @@ if ($conn->connect_error) {
     exit();
 }
 
-
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $action = $_GET['action'] ?? '';
-    
+
     if ($action === 'get') {
         $sql = "SELECT * FROM employees ORDER BY FirstName, LastName";
         $result = $conn->query($sql);
-        
+
         if ($result) {
             $employees = [];
             while ($row = $result->fetch_assoc()) {
@@ -48,32 +44,30 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         http_response_code(400);
         echo json_encode(['success' => false, 'message' => 'Invalid action parameter']);
     }
-    
+
     $conn->close();
     exit();
 }
-
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $action = $_GET['action'] ?? '';
     $input = json_decode(file_get_contents('php://input'), true);
-if ($action === 'get' && isset($input['email']) && !empty($input['email'])) {
-    $email = trim($input['email']);
-    $sql = "SELECT signup.accid, signup.email, signup.password, employees.* FROM signup INNER JOIN employees ON signup.email = employees.email WHERE signup.email = '" . $conn->real_escape_string($email) . "'";
-    $result = $conn->query($sql);
-    if ($result && $result->num_rows > 0) {
-        $employee = $result->fetch_assoc();
-        echo json_encode([$employee]);
-    } else {
-        http_response_code(404);
-        echo json_encode(['error' => 'Walang data na nahanap para sa email na ito']);
-    }
-    $conn->close();
-    exit();
-}
 
-    
+    if ($action === 'get' && isset($input['email']) && !empty($input['email'])) {
+        $email = trim($input['email']);
+        $sql = "SELECT signup.accid, signup.email, signup.password, employees.* FROM signup INNER JOIN employees ON signup.email = employees.email WHERE signup.email = '" . $conn->real_escape_string($email) . "'";
+        $result = $conn->query($sql);
+        if ($result && $result->num_rows > 0) {
+            $employee = $result->fetch_assoc();
+            echo json_encode([$employee]);
+        } else {
+            http_response_code(404);
+            echo json_encode(['error' => 'Walang data na nahanap para sa email na ito']);
+        }
+        $conn->close();
+        exit();
+    }
+
     $upload_dir = "uploads/";
     if (!file_exists($upload_dir)) {
         mkdir($upload_dir, 0777, true);
@@ -112,13 +106,15 @@ if ($action === 'get' && isset($input['email']) && !empty($input['email'])) {
             exit();
         }
     }
+
+    // Employee fields
     $first_name = trim($_POST['firstName'] ?? '');
     $last_name = trim($_POST['lastName'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $phone = trim($_POST['phone'] ?? '');
-    $id_number = trim($_POST['idNumber'] ?? '');
     $department = trim($_POST['Department'] ?? '');
     $employee_type = trim($_POST['employeeType'] ?? '');
+    $company = trim($_POST['Company'] ?? '');
     $gender = trim($_POST['gender'] ?? '');
     $position = trim($_POST['Position'] ?? '');
     $hire_date = trim($_POST['hireDate'] ?? '');
@@ -129,14 +125,16 @@ if ($action === 'get' && isset($input['email']) && !empty($input['email'])) {
     $city = trim($_POST['city'] ?? '');
     $state = trim($_POST['state'] ?? '');
     $zip = trim($_POST['zip'] ?? '');
+
+    // Required fields check
     $required_fields = [
         'firstName' => $first_name,
         'lastName' => $last_name,
         'email' => $email,
         'phone' => $phone,
-        'idNumber' => $id_number,
         'Department' => $department,
         'employeeType' => $employee_type,
+        'Company' => $company,
         'gender' => $gender,
         'Position' => $position,
         'hireDate' => $hire_date,
@@ -147,59 +145,86 @@ if ($action === 'get' && isset($input['email']) && !empty($input['email'])) {
         'state' => $state,
         'zip' => $zip
     ];
+
     foreach ($required_fields as $field_name => $field_value) {
         if (empty($field_value)) {
             echo json_encode(['success' => false, 'message' => "Field '$field_name' is required"]);
             exit();
         }
     }
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo json_encode(['success' => false, 'message' => 'Invalid email address']);
         exit();
     }
+
     if (!is_numeric($salary) || $salary < 0) {
         echo json_encode(['success' => false, 'message' => 'Salary must be a valid positive number']);
         exit();
     }
-    $check_sql = "SELECT idNumber FROM employees WHERE idNumber = ?";
-    $check_stmt = $conn->prepare($check_sql);
-    $check_stmt->bind_param("s", $id_number);
-    $check_stmt->execute();
-    $check_result = $check_stmt->get_result();
-    if ($check_result->num_rows > 0) {
-        echo json_encode(['success' => false, 'message' => 'Employee ID already exists']);
-        $check_stmt->close();
-        $conn->close();
-        exit();
+
+    // Generate ID based on company
+    $prefixes = [
+        'rigel' => 'r',
+        'asia navis' => 'an',
+        'peak' => 'phr'
+    ];
+
+    $company_lower = strtolower($company);
+    $prefix = $prefixes[$company_lower] ?? 'emp'; 
+
+    
+    $like = $prefix . '-%';
+    $sql = "SELECT idNumber FROM employees WHERE idNumber LIKE ? ORDER BY idNumber DESC LIMIT 1";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $like);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $next_number = 1;
+    if ($row = $result->fetch_assoc()) {
+        $last_id = $row['idNumber']; 
+        $parts = explode('-', $last_id);
+        if (isset($parts[1]) && is_numeric($parts[1])) {
+            $next_number = intval($parts[1]) + 1;
+        }
     }
-    $check_stmt->close();
+
+    $id_number = $prefix . '-' . str_pad($next_number, 3, '0', STR_PAD_LEFT);
+
+    // Insert employee
     $sql = "INSERT INTO employees (
-        idNumber, FirstName, LastName, Position, Department, employeeType, 
+        idNumber, FirstName, LastName, Position, Department, employeeType, Company,
         gender, hireDate, birthDate, email, phone, street1, street2, 
         city, state, zip, ProfilePicture, ResumeFile, salary
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
     $stmt = $conn->prepare($sql);
     if (!$stmt) {
         echo json_encode(['success' => false, 'message' => 'Prepare failed: ' . $conn->error]);
         exit();
     }
+
     $salary_decimal = floatval($salary);
     $stmt->bind_param(
-        "ssssssssssssssssssd", 
-        $id_number, $first_name, $last_name, $position, $department, 
-        $employee_type, $gender, $hire_date, $birth_date, $email, 
-        $phone, $street1, $street2, $city, $state, $zip, 
+        "sssssssssssssssssssd",
+        $id_number, $first_name, $last_name, $position, $department,
+        $employee_type, $company, $gender, $hire_date, $birth_date, $email,
+        $phone, $street1, $street2, $city, $state, $zip,
         $profile_picture, $resume_file, $salary_decimal
     );
+
     if ($stmt->execute()) {
         echo json_encode([
-            'success' => true, 
+            'success' => true,
             'message' => 'Employee added successfully',
-            'employee_id' => $conn->insert_id
+            'employee_id' => $conn->insert_id,
+            'idNumber' => $id_number
         ]);
     } else {
         echo json_encode(['success' => false, 'message' => 'Error inserting employee: ' . $stmt->error]);
     }
+
     $stmt->close();
 }
 
