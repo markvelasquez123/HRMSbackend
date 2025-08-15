@@ -21,7 +21,6 @@ if ($conn->connect_error) {
     exit();
 }
 
-// Handle file uploads
 function saveFile($fieldName) {
     if (isset($_FILES[$fieldName]) && $_FILES[$fieldName]['error'] === UPLOAD_ERR_OK) {
         $uploadDir = "uploads/";
@@ -89,4 +88,6 @@ if ($stmt->execute()) {
 
 $stmt->close();
 $conn->close();
+
+
 ?>
