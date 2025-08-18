@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = trim($_POST['phone'] ?? '');
     $department = trim($_POST['Department'] ?? '');
     $employee_type = trim($_POST['employeeType'] ?? '');
-    $company = trim($_POST['Company'] ?? '');
+    $company = trim($_POST['company'] ?? '');
     $gender = trim($_POST['gender'] ?? '');
     $position = trim($_POST['Position'] ?? '');
     $hire_date = trim($_POST['hireDate'] ?? '');
@@ -134,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'phone' => $phone,
         'Department' => $department,
         'employeeType' => $employee_type,
-        'Company' => $company,
+        'company' => $company,
         'gender' => $gender,
         'Position' => $position,
         'hireDate' => $hire_date,
@@ -190,11 +190,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    $id_number = $prefix . '-' . str_pad($next_number, 3, '0', STR_PAD_LEFT);
+    $id_number = trim($_POST['idNumber'] ?? '');
 
     // Insert employee
     $sql = "INSERT INTO employees (
-        idNumber, FirstName, LastName, Position, Department, employeeType, Company,
+        idNumber, FirstName, LastName, Position, Department, employeeType, company,
         gender, hireDate, birthDate, email, phone, street1, street2, 
         city, state, zip, ProfilePicture, ResumeFile, salary
     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
