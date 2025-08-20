@@ -62,7 +62,7 @@ $sql = "INSERT INTO applicant (
     avatar, firstName, middleName, lastName, gender, birthMonth, birthDay, birthYear,
     email, phone, street1, street2, city, state, zip, position,
     resumeUrl, passport, diploma, tor, medical, tinId, nbiClearance,
-    policeClearance, pagibigNumber, philhealthNumber
+    policeClearance, pagibigNumber, philhealthNumber 
 ) VALUES (
     ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
 )";

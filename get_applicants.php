@@ -77,7 +77,7 @@ if ($result && $result->num_rows > 0) {
             'philhealthNumber' => $row['philhealthNumber']
         ];
     }
-}
+} 
 
 $conn->close();
 
