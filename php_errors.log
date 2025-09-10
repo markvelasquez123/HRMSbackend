@@ -1,0 +1,1562 @@
+[03-Sep-2025 20:25:47 Europe/Berlin] Received JSON: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:25:47 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:25:47 Europe/Berlin] Add OFW Error: Unable to generate unique employee ID
+[03-Sep-2025 20:25:47 Europe/Berlin] Stack trace: #0 {main}
+[03-Sep-2025 20:26:15 Europe/Berlin] Received JSON: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:26:15 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:26:15 Europe/Berlin] Add OFW Error: Unable to generate unique employee ID
+[03-Sep-2025 20:26:15 Europe/Berlin] Stack trace: #0 {main}
+[03-Sep-2025 20:28:08 Europe/Berlin] Received JSON: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:28:08 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:28:08 Europe/Berlin] Add OFW Error: Unable to generate unique employee ID
+[03-Sep-2025 20:28:08 Europe/Berlin] Stack trace: #0 {main}
+[03-Sep-2025 20:29:35 Europe/Berlin] Received JSON: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:29:35 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:29:35 Europe/Berlin] Add OFW Error: Unable to generate unique employee ID
+[03-Sep-2025 20:29:35 Europe/Berlin] Stack trace: #0 {main}
+[03-Sep-2025 20:30:52 Europe/Berlin] Received JSON: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:30:52 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:30:52 Europe/Berlin] Add OFW Error: Unable to generate unique employee ID
+[03-Sep-2025 20:30:52 Europe/Berlin] Stack trace: #0 {main}
+[03-Sep-2025 20:30:57 Europe/Berlin] Received JSON: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:30:57 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:30:57 Europe/Berlin] Add OFW Error: Unable to generate unique employee ID
+[03-Sep-2025 20:30:57 Europe/Berlin] Stack trace: #0 {main}
+[03-Sep-2025 20:30:58 Europe/Berlin] Received JSON: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:30:58 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:30:58 Europe/Berlin] Add OFW Error: Unable to generate unique employee ID
+[03-Sep-2025 20:30:58 Europe/Berlin] Stack trace: #0 {main}
+[03-Sep-2025 20:31:15 Europe/Berlin] Received JSON: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:31:15 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:31:15 Europe/Berlin] Add OFW Error: Unable to generate unique employee ID
+[03-Sep-2025 20:31:15 Europe/Berlin] Stack trace: #0 {main}
+[03-Sep-2025 20:31:31 Europe/Berlin] Received JSON: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:31:31 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:31:31 Europe/Berlin] Add OFW Error: Unable to generate unique employee ID
+[03-Sep-2025 20:31:31 Europe/Berlin] Stack trace: #0 {main}
+[03-Sep-2025 20:38:37 Europe/Berlin] Request method: POST
+[03-Sep-2025 20:38:37 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 20:38:37 Europe/Berlin] Raw JSON input: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:38:37 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:38:37 Europe/Berlin] Add OFW Error: Unable to generate unique employee ID
+[03-Sep-2025 20:38:37 Europe/Berlin] Stack trace: #0 {main}
+[03-Sep-2025 20:38:43 Europe/Berlin] Request method: POST
+[03-Sep-2025 20:38:43 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 20:38:43 Europe/Berlin] Raw JSON input: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:38:43 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:38:43 Europe/Berlin] Add OFW Error: Unable to generate unique employee ID
+[03-Sep-2025 20:38:43 Europe/Berlin] Stack trace: #0 {main}
+[03-Sep-2025 20:40:10 Europe/Berlin] Request method: POST
+[03-Sep-2025 20:40:10 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 20:40:10 Europe/Berlin] Raw JSON input: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:40:10 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 1: OFW ID OFW8093610 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 2: OFW ID OFW3541410 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 3: OFW ID OFW4407910 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 4: OFW ID OFW3733910 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 5: OFW ID OFW1513510 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 6: OFW ID OFW4775110 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 7: OFW ID OFW1881410 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 8: OFW ID OFW5787010 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 9: OFW ID OFW8383610 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 10: OFW ID OFW8035310 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 11: OFW ID OFW5305310 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 12: OFW ID OFW6283410 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 13: OFW ID OFW7861810 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 14: OFW ID OFW7192010 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 15: OFW ID OFW8865710 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 16: OFW ID OFW6022310 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 17: OFW ID OFW7895210 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 18: OFW ID OFW6007410 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 19: OFW ID OFW2112710 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 20: OFW ID OFW6086810 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 21: OFW ID OFW3592510 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 22: OFW ID OFW5954710 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 23: OFW ID OFW5418010 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 24: OFW ID OFW2430110 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 25: OFW ID OFW9427810 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 26: OFW ID OFW3749910 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 27: OFW ID OFW48105815 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 28: OFW ID OFW48105819 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 29: OFW ID OFW48105823 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 30: OFW ID OFW48105826 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 31: OFW ID OFW48105830 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 32: OFW ID OFW48105834 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 33: OFW ID OFW48105837 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 34: OFW ID OFW48105841 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 35: OFW ID OFW48105845 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 36: OFW ID OFW48105848 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 37: OFW ID OFW48105852 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 38: OFW ID OFW48105856 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 39: OFW ID OFW48105859 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 40: OFW ID OFW48105863 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 41: OFW ID OFW48105867 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 42: OFW ID OFW48105871 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 43: OFW ID OFW48105876 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 44: OFW ID OFW48105880 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 45: OFW ID OFW48105885 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 46: OFW ID OFW48105891 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 47: OFW ID OFW48105896 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 48: OFW ID OFW48105903 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 49: OFW ID OFW48105907 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Attempt 50: OFW ID OFW48105912 already exists, trying again...
+[03-Sep-2025 20:40:10 Europe/Berlin] Add OFW Error: Unable to generate unique employee ID after 50 attempts. Please contact administrator.
+[03-Sep-2025 20:40:10 Europe/Berlin] Stack trace: #0 {main}
+[03-Sep-2025 20:40:25 Europe/Berlin] Request method: POST
+[03-Sep-2025 20:40:25 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 20:40:25 Europe/Berlin] Raw JSON input: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:40:25 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:40:25 Europe/Berlin] Add OFW Error: Unable to generate unique employee ID
+[03-Sep-2025 20:40:25 Europe/Berlin] Stack trace: #0 {main}
+[03-Sep-2025 20:43:12 Europe/Berlin] Request method: POST
+[03-Sep-2025 20:43:12 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 20:43:12 Europe/Berlin] Raw JSON input: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:43:12 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:43:12 Europe/Berlin] Add OFW Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[03-Sep-2025 20:43:12 Europe/Berlin] Stack trace: #0 C:\Users\Mark V\OneDrive\Documents\GitHub\xampp\htdocs\HRMSbackend\add_ofw.php(123): PDOStatement->execute(Array)
+#1 {main}
+[03-Sep-2025 20:43:37 Europe/Berlin] Request method: POST
+[03-Sep-2025 20:43:37 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 20:43:37 Europe/Berlin] Raw JSON input: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:43:37 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:43:37 Europe/Berlin] Add OFW Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[03-Sep-2025 20:43:37 Europe/Berlin] Stack trace: #0 C:\Users\Mark V\OneDrive\Documents\GitHub\xampp\htdocs\HRMSbackend\add_ofw.php(123): PDOStatement->execute(Array)
+#1 {main}
+[03-Sep-2025 20:48:33 Europe/Berlin] Request method: POST
+[03-Sep-2025 20:48:33 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 20:48:33 Europe/Berlin] Raw JSON input: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:48:33 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:48:33 Europe/Berlin] Insert data: Array
+(
+    [0] => OFW9969
+    [1] => Robert Jay
+    [2] => Lone
+    [3] => lone@gmail.com
+    [4] => 09772389363
+    [5] => Ship Hull Fitter
+    [6] => OFW
+    [7] => OFW
+    [8] => 2025-09-03
+    [9] => 2000-04-02
+    [10] => Male
+    [11] => 2130 Leveriza street
+    [12] => 337 taylo street
+    [13] => Pasay City
+    [14] => National Capital Region
+    [15] => 1304
+    [16] => uploads/1756922243_download.jpg
+    [17] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [18] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [19] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [20] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [21] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [22] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [23] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [24] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [25] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [26] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:48:33 Europe/Berlin] Warning: Could not remove applicant: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hrms.applicants' doesn't exist
+[03-Sep-2025 20:48:33 Europe/Berlin] OFW successfully created with ID: 2, Employee ID: OFW9969
+[03-Sep-2025 20:54:33 Europe/Berlin] Request method: POST
+[03-Sep-2025 20:54:33 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 20:54:33 Europe/Berlin] Raw JSON input: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:54:33 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:54:33 Europe/Berlin] Generated sequential OFW ID: OFW001
+[03-Sep-2025 20:54:33 Europe/Berlin] Insert data: Array
+(
+    [0] => OFW001
+    [1] => Robert Jay
+    [2] => Lone
+    [3] => lone@gmail.com
+    [4] => 09772389363
+    [5] => Ship Hull Fitter
+    [6] => OFW
+    [7] => OFW
+    [8] => 2025-09-03
+    [9] => 2000-04-02
+    [10] => Male
+    [11] => 2130 Leveriza street
+    [12] => 337 taylo street
+    [13] => Pasay City
+    [14] => National Capital Region
+    [15] => 1304
+    [16] => uploads/1756922243_download.jpg
+    [17] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [18] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [19] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [20] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [21] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [22] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [23] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [24] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [25] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [26] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:54:33 Europe/Berlin] Warning: Could not remove applicant: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hrms.applicants' doesn't exist
+[03-Sep-2025 20:54:33 Europe/Berlin] OFW successfully created with ID: 3, Employee ID: OFW001
+[03-Sep-2025 20:54:58 Europe/Berlin] Request method: POST
+[03-Sep-2025 20:54:58 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 20:54:58 Europe/Berlin] Raw JSON input: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 20:54:58 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:54:58 Europe/Berlin] Generated sequential OFW ID: OFW001
+[03-Sep-2025 20:54:58 Europe/Berlin] Insert data: Array
+(
+    [0] => OFW001
+    [1] => Robert Jay
+    [2] => Lone
+    [3] => lone@gmail.com
+    [4] => 09772389363
+    [5] => Ship Hull Fitter
+    [6] => OFW
+    [7] => OFW
+    [8] => 2025-09-03
+    [9] => 2000-04-02
+    [10] => Male
+    [11] => 2130 Leveriza street
+    [12] => 337 taylo street
+    [13] => Pasay City
+    [14] => National Capital Region
+    [15] => 1304
+    [16] => uploads/1756922243_download.jpg
+    [17] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [18] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [19] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [20] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [21] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [22] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [23] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [24] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [25] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [26] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 20:54:58 Europe/Berlin] Warning: Could not remove applicant: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hrms.applicants' doesn't exist
+[03-Sep-2025 20:54:58 Europe/Berlin] OFW successfully created with ID: 4, Employee ID: OFW001
+[03-Sep-2025 22:20:50 Europe/Berlin] Request method: POST
+[03-Sep-2025 22:20:50 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 22:20:50 Europe/Berlin] Raw JSON input: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 22:20:50 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 22:20:50 Europe/Berlin] Add OFW Error: An OFW with this email already exists
+[03-Sep-2025 22:20:50 Europe/Berlin] Stack trace: #0 {main}
+[03-Sep-2025 22:21:13 Europe/Berlin] Request method: POST
+[03-Sep-2025 22:21:13 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 22:21:13 Europe/Berlin] Raw JSON input: {"firstName":"Robert Jay","lastName":"Lone","email":"lone@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756922243_download.jpg","resumeUrl":"uploads/1756922243_DOC080525-08052025163749.pdf","passport":"uploads/1756922243_DOC080525-08052025163749.pdf","diploma":"uploads/1756922243_DOC080525-08052025163749.pdf","tor":"uploads/1756922243_DOC080525-08052025163749.pdf","medical":"uploads/1756922243_DOC080525-08052025163749.pdf","tinId":"uploads/1756922243_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756922243_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756922243_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756922243_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 22:21:13 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => lone@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756922243_download.jpg
+    [resumeUrl] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 22:21:13 Europe/Berlin] Generated sequential OFW ID: OFW001
+[03-Sep-2025 22:21:13 Europe/Berlin] Insert data: Array
+(
+    [0] => OFW001
+    [1] => Robert Jay
+    [2] => Lone
+    [3] => lone@gmail.com
+    [4] => 09772389363
+    [5] => Ship Hull Fitter
+    [6] => OFW
+    [7] => OFW
+    [8] => 2025-09-03
+    [9] => 2000-04-02
+    [10] => Male
+    [11] => 2130 Leveriza street
+    [12] => 337 taylo street
+    [13] => Pasay City
+    [14] => National Capital Region
+    [15] => 1304
+    [16] => uploads/1756922243_download.jpg
+    [17] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [18] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [19] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [20] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [21] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [22] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [23] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [24] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [25] => uploads/1756922243_DOC080525-08052025163749.pdf
+    [26] => uploads/1756922243_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 22:21:13 Europe/Berlin] Warning: Could not remove applicant: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hrms.applicants' doesn't exist
+[03-Sep-2025 22:21:13 Europe/Berlin] OFW successfully created with ID: 5, Employee ID: OFW001
+[03-Sep-2025 22:22:20 Europe/Berlin] Request method: POST
+[03-Sep-2025 22:22:20 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 22:22:20 Europe/Berlin] Raw JSON input: {"firstName":"Robert Jay","lastName":"Lone","email":"hyat@gmail.com","phone":"09772389363","position":"Ship Hull Fitter","department":"OFW","employeeType":"OFW","dateHired":"2025-09-03","birthDay":"2","birthMonth":"4","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1756930933_download.jpg","resumeUrl":"uploads/1756930933_DOC080525-08052025163749.pdf","passport":"uploads/1756930933_DOC080525-08052025163749.pdf","diploma":"uploads/1756930933_DOC080525-08052025163749.pdf","tor":"uploads/1756930933_DOC080525-08052025163749.pdf","medical":"uploads/1756930933_DOC080525-08052025163749.pdf","tinId":"uploads/1756930933_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1756930933_DOC080525-08052025163749.pdf","policeClearance":"uploads/1756930933_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1756930933_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1756930933_DOC080525-08052025163749.pdf"}
+[03-Sep-2025 22:22:20 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Robert Jay
+    [lastName] => Lone
+    [email] => hyat@gmail.com
+    [phone] => 09772389363
+    [position] => Ship Hull Fitter
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-03
+    [birthDay] => 2
+    [birthMonth] => 4
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1756930933_download.jpg
+    [resumeUrl] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [passport] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [tor] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [medical] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1756930933_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 22:22:20 Europe/Berlin] Generated sequential OFW ID: OFW002
+[03-Sep-2025 22:22:20 Europe/Berlin] Insert data: Array
+(
+    [0] => OFW002
+    [1] => Robert Jay
+    [2] => Lone
+    [3] => hyat@gmail.com
+    [4] => 09772389363
+    [5] => Ship Hull Fitter
+    [6] => OFW
+    [7] => OFW
+    [8] => 2025-09-03
+    [9] => 2000-04-02
+    [10] => Male
+    [11] => 2130 Leveriza street
+    [12] => 337 taylo street
+    [13] => Pasay City
+    [14] => National Capital Region
+    [15] => 1304
+    [16] => uploads/1756930933_download.jpg
+    [17] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [18] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [19] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [20] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [21] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [22] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [23] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [24] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [25] => uploads/1756930933_DOC080525-08052025163749.pdf
+    [26] => uploads/1756930933_DOC080525-08052025163749.pdf
+)
+
+[03-Sep-2025 22:22:20 Europe/Berlin] Warning: Could not remove applicant: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hrms.applicants' doesn't exist
+[03-Sep-2025 22:22:20 Europe/Berlin] OFW successfully created with ID: 6, Employee ID: OFW002
+[03-Sep-2025 22:56:47 Europe/Berlin] Request method: POST
+[03-Sep-2025 22:56:47 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 22:56:47 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[03-Sep-2025 22:56:47 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[03-Sep-2025 22:56:47 Europe/Berlin] Adding status column to ofw table
+[03-Sep-2025 22:56:47 Europe/Berlin] Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list'
+[03-Sep-2025 22:56:47 Europe/Berlin] Stack trace: #0 C:\Users\Mark V\OneDrive\Documents\GitHub\xampp\htdocs\HRMSbackend\add_ofw.php(132): PDOStatement->execute(Array)
+#1 {main}
+[03-Sep-2025 22:58:51 Europe/Berlin] Request method: POST
+[03-Sep-2025 22:58:51 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 22:58:51 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[03-Sep-2025 22:58:51 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[03-Sep-2025 22:58:51 Europe/Berlin] Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list'
+[03-Sep-2025 22:58:51 Europe/Berlin] Stack trace: #0 C:\Users\Mark V\OneDrive\Documents\GitHub\xampp\htdocs\HRMSbackend\add_ofw.php(130): PDOStatement->execute(Array)
+#1 {main}
+[03-Sep-2025 23:00:54 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:00:54 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:00:54 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[03-Sep-2025 23:00:54 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:00:54 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[03-Sep-2025 23:00:57 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:00:57 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:00:57 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[03-Sep-2025 23:00:57 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:00:57 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[03-Sep-2025 23:00:58 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:00:58 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:00:58 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Repatriated"}
+[03-Sep-2025 23:00:58 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Repatriated
+)
+
+[03-Sep-2025 23:00:58 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Repatriated
+[03-Sep-2025 23:01:05 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:01:05 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:01:05 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[03-Sep-2025 23:01:05 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:01:05 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[03-Sep-2025 23:01:07 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:01:07 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:01:07 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Repatriated"}
+[03-Sep-2025 23:01:07 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Repatriated
+)
+
+[03-Sep-2025 23:01:07 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Repatriated
+[03-Sep-2025 23:01:08 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:01:08 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:01:08 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Repatriated"}
+[03-Sep-2025 23:01:08 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Repatriated
+)
+
+[03-Sep-2025 23:01:08 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Repatriated
+[03-Sep-2025 23:01:16 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:01:16 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:01:16 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[03-Sep-2025 23:01:16 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:01:16 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[03-Sep-2025 23:01:19 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:01:19 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:01:19 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Repatriated"}
+[03-Sep-2025 23:01:19 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Repatriated
+)
+
+[03-Sep-2025 23:01:19 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Repatriated
+[03-Sep-2025 23:01:33 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:01:33 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:01:33 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Repatriated"}
+[03-Sep-2025 23:01:33 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Repatriated
+)
+
+[03-Sep-2025 23:01:33 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Repatriated
+[03-Sep-2025 23:01:38 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:01:38 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:01:38 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[03-Sep-2025 23:01:38 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:01:38 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[03-Sep-2025 23:01:43 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:01:43 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:01:43 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Repatriated"}
+[03-Sep-2025 23:01:43 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Repatriated
+)
+
+[03-Sep-2025 23:01:43 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Repatriated
+[03-Sep-2025 23:01:54 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:01:54 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:01:54 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"Repatriated"}
+[03-Sep-2025 23:01:54 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => Repatriated
+)
+
+[03-Sep-2025 23:01:54 Europe/Berlin] Status updated successfully for employee ID: 5 to status: Repatriated
+[03-Sep-2025 23:02:03 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:02:03 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:02:03 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"On Process"}
+[03-Sep-2025 23:02:03 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => On Process
+)
+
+[03-Sep-2025 23:02:03 Europe/Berlin] Status updated successfully for employee ID: 5 to status: On Process
+[03-Sep-2025 23:05:43 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:05:43 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:05:43 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"Repatriated"}
+[03-Sep-2025 23:05:43 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => Repatriated
+)
+
+[03-Sep-2025 23:05:43 Europe/Berlin] Status updated successfully for employee ID: 5 to status: Repatriated
+[03-Sep-2025 23:05:44 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:05:44 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:05:44 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"Repatriated"}
+[03-Sep-2025 23:05:44 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => Repatriated
+)
+
+[03-Sep-2025 23:05:44 Europe/Berlin] Status updated successfully for employee ID: 5 to status: Repatriated
+[03-Sep-2025 23:05:46 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:05:46 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:05:46 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"Deployed"}
+[03-Sep-2025 23:05:46 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:05:46 Europe/Berlin] Status updated successfully for employee ID: 5 to status: Deployed
+[03-Sep-2025 23:05:53 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:05:53 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:05:53 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"Deployed"}
+[03-Sep-2025 23:05:53 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:05:53 Europe/Berlin] Status updated successfully for employee ID: 5 to status: Deployed
+[03-Sep-2025 23:05:55 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:05:55 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:05:55 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"Deployed"}
+[03-Sep-2025 23:05:55 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:05:55 Europe/Berlin] Status updated successfully for employee ID: 5 to status: Deployed
+[03-Sep-2025 23:05:56 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:05:56 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:05:56 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"Repatriated"}
+[03-Sep-2025 23:05:56 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => Repatriated
+)
+
+[03-Sep-2025 23:05:56 Europe/Berlin] Status updated successfully for employee ID: 5 to status: Repatriated
+[03-Sep-2025 23:06:51 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:06:51 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:06:51 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"Deployed"}
+[03-Sep-2025 23:06:51 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:06:51 Europe/Berlin] Status updated successfully for employee ID: 5 to status: Deployed
+[03-Sep-2025 23:17:19 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:17:19 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:17:19 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"Deployed"}
+[03-Sep-2025 23:17:19 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:17:19 Europe/Berlin] Status updated successfully for employee ID: 5 to status: Deployed
+[03-Sep-2025 23:18:36 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:18:36 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:18:37 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"Repatriated"}
+[03-Sep-2025 23:18:37 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => Repatriated
+)
+
+[03-Sep-2025 23:18:37 Europe/Berlin] Status updated successfully for employee ID: 5 to status: Repatriated
+[03-Sep-2025 23:18:43 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:18:43 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:18:43 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"Deployed"}
+[03-Sep-2025 23:18:43 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:18:43 Europe/Berlin] Status updated successfully for employee ID: 5 to status: Deployed
+[03-Sep-2025 23:18:45 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:18:45 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:18:45 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"On Process"}
+[03-Sep-2025 23:18:45 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => On Process
+)
+
+[03-Sep-2025 23:18:45 Europe/Berlin] Status updated successfully for employee ID: 5 to status: On Process
+[03-Sep-2025 23:18:46 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:18:46 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:18:46 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"Deployed"}
+[03-Sep-2025 23:18:46 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:18:46 Europe/Berlin] Status updated successfully for employee ID: 5 to status: Deployed
+[03-Sep-2025 23:19:48 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:19:48 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:19:48 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[03-Sep-2025 23:19:48 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:19:48 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[03-Sep-2025 23:19:49 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:19:49 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:19:49 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"On Process"}
+[03-Sep-2025 23:19:49 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => On Process
+)
+
+[03-Sep-2025 23:19:50 Europe/Berlin] Status updated successfully for employee ID: 6 to status: On Process
+[03-Sep-2025 23:21:21 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:21:21 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:21:21 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[03-Sep-2025 23:21:21 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:21:21 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[03-Sep-2025 23:22:08 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:22:08 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:22:08 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[03-Sep-2025 23:22:08 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:22:08 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[03-Sep-2025 23:23:37 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:23:37 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:23:37 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"On Process"}
+[03-Sep-2025 23:23:37 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => On Process
+)
+
+[03-Sep-2025 23:23:37 Europe/Berlin] Status updated successfully for employee ID: 6 to status: On Process
+[03-Sep-2025 23:25:36 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:25:36 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:25:36 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[03-Sep-2025 23:25:36 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:25:36 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[03-Sep-2025 23:28:35 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:28:35 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:28:35 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[03-Sep-2025 23:28:35 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:28:35 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[03-Sep-2025 23:28:39 Europe/Berlin] Request method: POST
+[03-Sep-2025 23:28:39 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[03-Sep-2025 23:28:39 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[03-Sep-2025 23:28:39 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:28:39 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[03-Sep-2025 23:31:49 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[03-Sep-2025 23:31:49 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:31:49 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[03-Sep-2025 23:31:54 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"On Process"}
+[03-Sep-2025 23:31:54 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => On Process
+)
+
+[03-Sep-2025 23:31:54 Europe/Berlin] Status updated successfully for employee ID: 6 to status: On Process
+[03-Sep-2025 23:32:16 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"Repatriated"}
+[03-Sep-2025 23:32:16 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => Repatriated
+)
+
+[03-Sep-2025 23:32:16 Europe/Berlin] Status updated successfully for employee ID: 5 to status: Repatriated
+[03-Sep-2025 23:35:10 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[03-Sep-2025 23:35:10 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[03-Sep-2025 23:35:10 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[04-Sep-2025 00:07:14 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Repatriated"}
+[04-Sep-2025 00:07:14 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Repatriated
+)
+
+[04-Sep-2025 00:07:14 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Repatriated
+[04-Sep-2025 00:07:20 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"On Process"}
+[04-Sep-2025 00:07:20 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => On Process
+)
+
+[04-Sep-2025 00:07:20 Europe/Berlin] Status updated successfully for employee ID: 5 to status: On Process
+[04-Sep-2025 00:28:05 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[04-Sep-2025 00:28:05 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[04-Sep-2025 00:28:05 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[04-Sep-2025 00:28:09 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"Deployed"}
+[04-Sep-2025 00:28:09 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => Deployed
+)
+
+[04-Sep-2025 00:28:09 Europe/Berlin] Status updated successfully for employee ID: 5 to status: Deployed
+[05-Sep-2025 00:49:57 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Repatriated"}
+[05-Sep-2025 00:49:57 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Repatriated
+)
+
+[05-Sep-2025 00:49:57 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Repatriated
+[05-Sep-2025 00:50:11 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[05-Sep-2025 00:50:11 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[05-Sep-2025 00:50:11 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[05-Sep-2025 23:35:33 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"On Process"}
+[05-Sep-2025 23:35:33 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => On Process
+)
+
+[05-Sep-2025 23:35:33 Europe/Berlin] Status updated successfully for employee ID: 6 to status: On Process
+[05-Sep-2025 23:36:21 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[05-Sep-2025 23:36:21 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[05-Sep-2025 23:36:21 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[05-Sep-2025 23:36:22 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Repatriated"}
+[05-Sep-2025 23:36:22 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Repatriated
+)
+
+[05-Sep-2025 23:36:22 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Repatriated
+[05-Sep-2025 23:36:24 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[05-Sep-2025 23:36:24 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[05-Sep-2025 23:36:24 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[06-Sep-2025 02:06:01 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"On Process"}
+[06-Sep-2025 02:06:01 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => On Process
+)
+
+[06-Sep-2025 02:06:01 Europe/Berlin] Status updated successfully for employee ID: 6 to status: On Process
+[06-Sep-2025 02:06:17 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"Repatriated"}
+[06-Sep-2025 02:06:17 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => Repatriated
+)
+
+[06-Sep-2025 02:06:17 Europe/Berlin] Status updated successfully for employee ID: 5 to status: Repatriated
+[06-Sep-2025 02:06:27 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[06-Sep-2025 02:06:27 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[06-Sep-2025 02:06:27 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[06-Sep-2025 02:06:52 Europe/Berlin] Raw JSON input: {"employeeId":"5","status":"On Process"}
+[06-Sep-2025 02:06:52 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 5
+    [status] => On Process
+)
+
+[06-Sep-2025 02:06:52 Europe/Berlin] Status updated successfully for employee ID: 5 to status: On Process
+[06-Sep-2025 02:07:24 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"On Process"}
+[06-Sep-2025 02:07:24 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => On Process
+)
+
+[06-Sep-2025 02:07:24 Europe/Berlin] Status updated successfully for employee ID: 6 to status: On Process
+[08-Sep-2025 23:05:17 Europe/Berlin] Raw JSON input: {"employeeId":"6","status":"Deployed"}
+[08-Sep-2025 23:05:17 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 6
+    [status] => Deployed
+)
+
+[08-Sep-2025 23:05:17 Europe/Berlin] Status updated successfully for employee ID: 6 to status: Deployed
+[09-Sep-2025 01:04:18 Europe/Berlin] Request method: POST
+[09-Sep-2025 01:04:18 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[09-Sep-2025 01:04:18 Europe/Berlin] Raw JSON input: {"firstName":"Chris","lastName":"Land","email":"markvelasquez347@gmail.com","phone":"09772389363","position":"Scaffolder","department":"OFW","employeeType":"OFW","dateHired":"2025-09-08","birthDay":"6","birthMonth":"6","birthYear":"2000","gender":"Male","street1":"2130 Leveriza street","street2":"337 taylo street","city":"Pasay City","state":"National Capital Region","zip":"1304","profilePicture":"uploads/1757372641_photo_2025-09-05_15-29-38.jpg","resumeUrl":"uploads/1757372641_DOC080525-08052025163749.pdf","passport":"uploads/1757372641_DOC080525-08052025163749.pdf","diploma":"uploads/1757372641_DOC080525-08052025163749.pdf","tor":"uploads/1757372641_DOC080525-08052025163749.pdf","medical":"uploads/1757372641_DOC080525-08052025163749.pdf","tinId":"uploads/1757372641_DOC080525-08052025163749.pdf","nbiClearance":"uploads/1757372641_DOC080525-08052025163749.pdf","policeClearance":"uploads/1757372641_DOC080525-08052025163749.pdf","pagibigNumber":"uploads/1757372641_DOC080525-08052025163749.pdf","philhealthNumber":"uploads/1757372641_DOC080525-08052025163749.pdf"}
+[09-Sep-2025 01:04:18 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Chris
+    [lastName] => Land
+    [email] => markvelasquez347@gmail.com
+    [phone] => 09772389363
+    [position] => Scaffolder
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-09-08
+    [birthDay] => 6
+    [birthMonth] => 6
+    [birthYear] => 2000
+    [gender] => Male
+    [street1] => 2130 Leveriza street
+    [street2] => 337 taylo street
+    [city] => Pasay City
+    [state] => National Capital Region
+    [zip] => 1304
+    [profilePicture] => uploads/1757372641_photo_2025-09-05_15-29-38.jpg
+    [resumeUrl] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [passport] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [diploma] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [tor] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [medical] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [tinId] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [nbiClearance] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [policeClearance] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [pagibigNumber] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [philhealthNumber] => uploads/1757372641_DOC080525-08052025163749.pdf
+)
+
+[09-Sep-2025 01:04:18 Europe/Berlin] Generated sequential OFW ID: OFW003
+[09-Sep-2025 01:04:18 Europe/Berlin] Insert data: Array
+(
+    [0] => OFW003
+    [1] => Chris
+    [2] => Land
+    [3] => markvelasquez347@gmail.com
+    [4] => 09772389363
+    [5] => Scaffolder
+    [6] => OFW
+    [7] => OFW
+    [8] => 2025-09-08
+    [9] => 2000-06-06
+    [10] => Male
+    [11] => 2130 Leveriza street
+    [12] => 337 taylo street
+    [13] => Pasay City
+    [14] => National Capital Region
+    [15] => 1304
+    [16] => uploads/1757372641_photo_2025-09-05_15-29-38.jpg
+    [17] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [18] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [19] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [20] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [21] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [22] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [23] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [24] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [25] => uploads/1757372641_DOC080525-08052025163749.pdf
+    [26] => uploads/1757372641_DOC080525-08052025163749.pdf
+)
+
+[09-Sep-2025 01:04:18 Europe/Berlin] Warning: Could not remove applicant: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hrms.applicants' doesn't exist
+[09-Sep-2025 01:04:18 Europe/Berlin] OFW successfully created with ID: 7, Employee ID: OFW003
+[09-Sep-2025 21:16:14 Europe/Berlin] Raw JSON input: {"employeeId":"7","status":"Deployed"}
+[09-Sep-2025 21:16:14 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 7
+    [status] => Deployed
+)
+
+[09-Sep-2025 21:16:14 Europe/Berlin] Status updated successfully for employee ID: 7 to status: Deployed
