@@ -64,63 +64,51 @@ try {
     }
     
     // Prepare all variables for binding
-    $idNumber = $employeeId;
-    $firstName = $input['firstName'];
-    $lastName = $input['lastName'];
-    $position = $input['position'];
-    $department = $input['department'];
-    $employeeType = $input['employeeType'];
+    $IDNumber = $employeeId;
+    $FirstName = $input['firstName'];
+    $LastName = $input['lastName'];
+    $PositionApplied = $input['position'];
+    $Department = $input['department'];
+    $EmployeeType = $input['employeeType'];
     $gender = $input['gender'] ?? null;
-    $email = $input['email'];
-    $phone = $input['phone'] ?? null;
-    $street1 = $input['street1'] ?? null;
-    $street2 = $input['street2'] ?? null;
-    $city = $input['city'] ?? null;
-    $state = $input['state'] ?? null;
-    $zip = $input['zip'] ?? null;
-    $profilePicture = $input['avatar'] ?? null;
-    $salary = null; // Default salary as null, can be updated later
+    $EmailAddress = $input['email'];
+    $ContactNumber = $input['phone'] ?? null;
+    $HomeAddress = $input['homeaddress'] ?? null;
+    $ProfilePicture = $input['avatar'] ?? null;
+    $salary = null; 
     $resumeFile = $input['resumeUrl'] ?? null;
     
     // Prepare SQL statement for inserting into employees table
-    $sql = "INSERT INTO employees (
-        idNumber,
-        firstName,
-        lastName,
-        position,
-        department,
-        employeeType,
+    $sql = "INSERT INTO employeee (
+        IDNumber,
+        FirstName,
+        LastName,
+        PositionApplied,
+        Department,
+        EmployeeType,
         gender,
-        hireDate,
-        birthDate,
-        email,
-        phone,
-        street1,
-        street2,
-        city,
-        state,
-        zip,
+        DateHired,
+        Birthdate,
+        EmailAddress,
+        ContactNumber,
+        HomeAddress,
         ProfilePicture,
         salary,
         ResumeFile,
         created_at
     ) VALUES (
-        :idNumber,
-        :firstName,
-        :lastName,
-        :position,
-        :department,
-        :employeeType,
+        :IDNumber,
+        :FirstName,
+        :LastName,
+        :PositionApplied,
+        :Department,
+        :EmployeeType,
         :gender,
-        :hireDate,
-        :birthDate,
-        :email,
-        :phone,
-        :street1,
-        :street2,
-        :city,
-        :state,
-        :zip,
+        :DateHired,
+        :Birthdate,
+        :EmailAddress,
+        :ContactNumber,
+        :HomeAddress,
         :ProfilePicture,
         :salary,
         :ResumeFile,
@@ -128,25 +116,42 @@ try {
     )";
     
     $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':IDNumber', $IDNumber);
+    $stmt->bindParam(':FirstName', $FirstName);
+    $stmt->bindParam(':LastName', $LastName);
+    $stmt->bindParam(':PositionApplied', $PositionApplied);
+    $stmt->bindParam(':Department', $Department);
+    $stmt->bindParam(':EmployeeType', $EmployeeType);
+    $stmt->bindParam(':gender', $gender);
+    $stmt->bindParam(':DateHired', $hireDate);
+    $stmt->bindParam(':Birthdate', $birthDate);
+    $stmt->bindParam(':EmailAddress', $EmailAddress);
+    $stmt->bindParam(':ContactNumber', $ContactNumber);
+    $stmt->bindParam(':HomeAddress', $HomeAddress);
+    $stmt->bindParam(':ProfilePicture', $ProfilePicture);
+    $stmt->bindParam(':salary', $salary);
+    $stmt->bindParam(':ResumeFile', $resumeFile);
+    $stmt->bindParam(':created_at', $currentDate);
+    
+    $stmt = $pdo->prepare($sql);
     
     // Bind parameters
-    $stmt->bindParam(':idNumber', $idNumber);
-    $stmt->bindParam(':firstName', $firstName);
-    $stmt->bindParam(':lastName', $lastName);
-    $stmt->bindParam(':position', $position);
-    $stmt->bindParam(':department', $department);
-    $stmt->bindParam(':employeeType', $employeeType);
+    $stmt->bindParam(':IDNumber', $IDNumber);
+    $stmt->bindParam(':FirstName', $FirstName);
+    $stmt->bindParam(':LastName', $LastName);
+    $stmt->bindParam(':PositionApplied', $PositionApplied);
+    $stmt->bindParam(':Department', $Department);
+    $stmt->bindParam(':EmployeeType', $EmployeeType);
     $stmt->bindParam(':gender', $gender);
-    $stmt->bindParam(':hireDate', $hireDate);
-    $stmt->bindParam(':birthDate', $birthDate);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':phone', $phone);
-    $stmt->bindParam(':street1', $street1);
-    $stmt->bindParam(':street2', $street2);
-    $stmt->bindParam(':city', $city);
-    $stmt->bindParam(':state', $state);
-    $stmt->bindParam(':zip', $zip);
-    $stmt->bindParam(':ProfilePicture', $profilePicture);
+    $stmt->bindParam(':DateHired', $DateHired);
+    $stmt->bindParam(':Birthdate', $Birthdate);
+    $stmt->bindParam(':EmailAddress', $EmailAddress);
+    $stmt->bindParam(':ContactNumber', $ContactNumber);
+    $stmt->bindParam(':HomeAddress', $HomeAddress);
+    $stmt->bindParam(':ProfilePicture', $ProfilePicture);
+    $stmt->bindParam(':salary', $salary);
+    $stmt->bindParam(':ResumeFile', $resumeFile);
+    $stmt->bindParam(':ProfilePicture', $ProfilePicture);
     $stmt->bindParam(':salary', $salary);
     $stmt->bindParam(':ResumeFile', $resumeFile);
     $stmt->bindParam(':created_at', $currentDate);
@@ -193,16 +198,16 @@ try {
         'success' => true,
         'message' => 'Applicant successfully accepted and moved to employees',
         'data' => [
-            'id' => $insertedId,
-            'idNumber' => $idNumber,
-            'firstName' => $firstName,
-            'lastName' => $lastName,
-            'email' => $email,
-            'position' => $position,
-            'department' => $department,
-            'employeeType' => $employeeType,
-            'hireDate' => $hireDate,
-            'birthDate' => $birthDate,
+            'ID' => $insertedID,
+            'IDNumber' => $IDNumber,
+            'FirstName' => $FirstName,
+            'LastName' => $LastName,
+            'EmailAddress' => $EmailAddress,
+            'PositionApplied' => $PositionApplied,
+            'Department' => $Department,
+            'EmployeeType' => $EmployeeType,
+            'DateHired' => $DateHired,
+            'Birthdate' => $Birthdate,
             'employee_id' => $insertedId,
             'applicant_removed' => $deletedRows > 0
         ]

@@ -9,32 +9,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
-
 $host = 'localhost';
 $dbname = 'hrms';
 $username = 'root';
 $password = '';
+
 $conn = new mysqli($host, $username, $password, $dbname);
 if ($conn->connect_error) {
     http_response_code(500);
     echo json_encode(['error' => 'Database connection failed']);
     exit();
 }
-
-
 $sql = "SELECT 
     *
-    FROM rules";
+    FROM employeee";
 $result = $conn->query($sql);
-
-$rules = [];
-   
-
+$employeee = [];
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        $rules[] = $row;
+        $summary[]= 
+        $employeee[] = $row;
+        
     }
 }
-echo json_encode($rules);
+$sql = "SELECT
+*
+FROM imgtable";
+$result = $conn->query($sql);
+echo json_encode($employeee);
 exit;
-?>
