@@ -1,13 +1,23 @@
 <?php
+
 header("Access-Control-Allow-Origin: http://localhost:3001");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 header("Access-Control-Allow-Credentials: true");
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
+
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode(["error" => "Method Not Allowed"]);
+    exit();
+}
+
 $host = "localhost";
 $user = "root";
 $password = "";
@@ -34,7 +44,6 @@ function saveFile($fieldName, $conn) {
     }
     return null;
 }
-
 
 $formFieldMap = [
     "FirstName" => "FirstName", "MiddleName" => "MiddleName", "LastName" => "LastName", 
@@ -65,26 +74,16 @@ if (isset($_POST['birthYear']) && isset($_POST['birthMonth']) && isset($_POST['b
     $year = $_POST['birthYear'];
     $month = $_POST['birthMonth'];
     $day = $_POST['birthDay'];
-    
     $data['BirthDate'] = "{$year}-{$month}-{$day}";
 }
 
 
 $sql = "INSERT INTO applicant (
     ProfilePicture, FirstName, MiddleName, LastName, Gender, BirthDate,
-    EmailAddress, ContactNumber, HomeAddress, PositionApplied,
-    
-) VALUES (
-    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
-)"
-$sql = "INSERT INTO requirements(
-    Resume, Passport, Diploma, Tor, Medical, TinID, 
-    NBIClearance, PoliceClearance, PagIbig, PhilHealth
+    EmailAddress, ContactNumber, HomeAddress, PositionApplied
 ) VALUES (
     ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
 )";
-
-
 
 $stmt = $conn->prepare($sql);
 if ($stmt === false) {
@@ -94,17 +93,41 @@ if ($stmt === false) {
 }
 
 $stmt->bind_param(
-    "ssssssssssssssssssss", 
+    "ssssssssss", 
     $data["ProfilePicture"], $data["FirstName"], $data["MiddleName"], $data["LastName"],
     $data["Gender"], $data["BirthDate"], 
-    $data["EmailAddress"], $data["ContactNumber"], $data["HomeAddress"], $data["PositionApplied"],
-    $data["Resume"], $data["Passport"], $data["Diploma"], $data["Tor"],
-    $data["Medical"], $data["TinID"], $data["NBIClearance"], $data["PoliceClearance"],
-    $data["PagIbig"], $data["PhilHealth"]
+    $data["EmailAddress"], $data["ContactNumber"], $data["HomeAddress"], $data["PositionApplied"]
 );
 
 if ($stmt->execute()) {
-    echo json_encode(["success" => true, "message" => "Application submitted successfully."]);
+   
+    $applicantId = $conn->insert_id;
+
+    $sqlReq = "INSERT INTO requirements(
+         Resume, Passport, Diploma, Tor, Medical, TinID, 
+        NBIClearance, PoliceClearance, PagIbig, PhilHealth
+    ) VALUES (
+        ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+    )";
+    $stmtReq = $conn->prepare($sqlReq);
+    if ($stmtReq === false) {
+        http_response_code(500);
+        echo json_encode(["error" => "Failed to prepare requirements SQL: " . $conn->error]);
+        exit();
+    }
+    $stmtReq->bind_param(
+        "ssssssssss",
+        $data["Resume"], $data["Passport"], $data["Diploma"], $data["Tor"],
+        $data["Medical"], $data["TinID"], $data["NBIClearance"], $data["PoliceClearance"],
+        $data["PagIbig"], $data["PhilHealth"]
+    );
+    if ($stmtReq->execute()) {
+        echo json_encode(["success" => true, "message" => "Application submitted successfully."]);
+    } else {
+        http_response_code(500);
+        echo json_encode(["error" => "Failed to submit requirements: " . $stmtReq->error]);
+    }
+    $stmtReq->close();
 } else {
     http_response_code(500);
     echo json_encode(["error" => "Failed to submit application: " . $stmt->error]);
@@ -112,4 +135,5 @@ if ($stmt->execute()) {
 
 $stmt->close();
 $conn->close();
+error_log(json_encode($_POST));
 ?>
