@@ -13,21 +13,20 @@ $user = "root";
 $password = "";
 $db = "hrms";
 
-// Connect to DB
 $conn = new mysqli($host, $user, $password, $db);
 if ($conn->connect_error) {
     http_response_code(500);
-    echo json_encode(["error" => "Database connection failed"]);
+    echo json_encode(["error" => "Database connection failed: " . $conn->connect_error]);
     exit();
 }
 
-function saveFile($fieldName) {
+function saveFile($fieldName, $conn) {
     if (isset($_FILES[$fieldName]) && $_FILES[$fieldName]['error'] === UPLOAD_ERR_OK) {
         $uploadDir = "uploads/";
         if (!is_dir($uploadDir)) {
             mkdir($uploadDir, 0777, true);
         }
-        $filename = time() . "_" . basename($_FILES[$fieldName]["name"]);
+        $filename = time() . "_" . $conn->real_escape_string(basename($_FILES[$fieldName]["name"]));
         $filepath = $uploadDir . $filename;
         if (move_uploaded_file($_FILES[$fieldName]["tmp_name"], $filepath)) {
             return $filepath;
@@ -36,58 +35,81 @@ function saveFile($fieldName) {
     return null;
 }
 
-// Fetch and sanitize form data
-$formFields = [
-    "firstName", "middleName", "lastName", "gender", "birthMonth", "birthDay", "birthYear",
-    "email", "phone", "street1", "street2", "city", "state", "zip", "position"
+
+$formFieldMap = [
+    "FirstName" => "FirstName", "MiddleName" => "MiddleName", "LastName" => "LastName", 
+    "Gender" => "Gender", "BirthDate" => "BirthDate", "EmailAddress" => "EmailAddress", 
+    "ContactNumber" => "ContactNumber", "HomeAddress" => "HomeAddress", 
+    "PositionApplied" => "PositionApplied"
+];
+
+$fileFieldMap = [
+    "ProfilePicture" => "ProfilePicture", "Resume" => "Resume", "Passport" => "Passport", 
+    "Diploma" => "Diploma", "Tor" => "Tor", "Medical" => "Medical", 
+    "TinID" => "TinID", "NBIClearance" => "NBIClearance", 
+    "PoliceClearance" => "PoliceClearance", "Pag-Ibig" => "PagIbig", 
+    "PhilHealth" => "PhilHealth"
 ];
 
 $data = [];
-foreach ($formFields as $field) {
-    $data[$field] = isset($_POST[$field]) ? $conn->real_escape_string($_POST[$field]) : "";
+foreach ($formFieldMap as $postField => $dbColumn) {
+    $data[$dbColumn] = isset($_POST[$postField]) ? $conn->real_escape_string($_POST[$postField]) : null;
 }
 
-// Handle uploaded files
-$fileFields = [
-    "avatar", "resumeUrl", "passport", "diploma", "tor", "medical",
-    "tinId", "nbiClearance", "policeClearance", "pagibigNumber", "philhealthNumber"
-];
-
-foreach ($fileFields as $field) {
-    $data[$field] = saveFile($field);
+foreach ($fileFieldMap as $postField => $dbColumn) {
+    $data[$dbColumn] = saveFile($postField, $conn);
 }
 
-// Insert into DB
+
+if (isset($_POST['birthYear']) && isset($_POST['birthMonth']) && isset($_POST['birthDay'])) {
+    $year = $_POST['birthYear'];
+    $month = $_POST['birthMonth'];
+    $day = $_POST['birthDay'];
+    
+    $data['BirthDate'] = "{$year}-{$month}-{$day}";
+}
+
+
 $sql = "INSERT INTO applicant (
-    avatar, firstName, middleName, lastName, gender, birthMonth, birthDay, birthYear,
-    email, phone, street1, street2, city, state, zip, position,
-    resumeUrl, passport, diploma, tor, medical, tinId, nbiClearance,
-    policeClearance, pagibigNumber, philhealthNumber 
+    ProfilePicture, FirstName, MiddleName, LastName, Gender, BirthDate,
+    EmailAddress, ContactNumber, HomeAddress, PositionApplied,
+    
 ) VALUES (
-    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+)"
+$sql = "INSERT INTO requirements(
+    Resume, Passport, Diploma, Tor, Medical, TinID, 
+    NBIClearance, PoliceClearance, PagIbig, PhilHealth
+) VALUES (
+    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
 )";
 
+
+
 $stmt = $conn->prepare($sql);
+if ($stmt === false) {
+    http_response_code(500);
+    echo json_encode(["error" => "Failed to prepare SQL statement: " . $conn->error]);
+    exit();
+}
+
 $stmt->bind_param(
-    "ssssssssssssssssssssssssss",
-    $data["avatar"], $data["firstName"], $data["middleName"], $data["lastName"],
-    $data["gender"], $data["birthMonth"], $data["birthDay"], $data["birthYear"],
-    $data["email"], $data["phone"], $data["street1"], $data["street2"],
-    $data["city"], $data["state"], $data["zip"], $data["position"],
-    $data["resumeUrl"], $data["passport"], $data["diploma"], $data["tor"],
-    $data["medical"], $data["tinId"], $data["nbiClearance"], $data["policeClearance"],
-    $data["pagibigNumber"], $data["philhealthNumber"]
+    "ssssssssssssssssssss", 
+    $data["ProfilePicture"], $data["FirstName"], $data["MiddleName"], $data["LastName"],
+    $data["Gender"], $data["BirthDate"], 
+    $data["EmailAddress"], $data["ContactNumber"], $data["HomeAddress"], $data["PositionApplied"],
+    $data["Resume"], $data["Passport"], $data["Diploma"], $data["Tor"],
+    $data["Medical"], $data["TinID"], $data["NBIClearance"], $data["PoliceClearance"],
+    $data["PagIbig"], $data["PhilHealth"]
 );
 
 if ($stmt->execute()) {
     echo json_encode(["success" => true, "message" => "Application submitted successfully."]);
 } else {
     http_response_code(500);
-    echo json_encode(["error" => "Failed to submit application"]);
+    echo json_encode(["error" => "Failed to submit application: " . $stmt->error]);
 }
 
 $stmt->close();
 $conn->close();
-
-
 ?>

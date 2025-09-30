@@ -24,11 +24,7 @@ if ($conn->connect_error) {
 
 // Select all relevant columns for both summary and details
 $sql = "SELECT 
-    avatar, firstName, lastName, email, phone, position, gender,
-    birthMonth, birthDay, birthYear, 
-    street1, street2, city, state, zip, 
-    resumeUrl, passport, diploma, tor, medical, tinId, 
-    nbiClearance, policeClearance, pagibigNumber, philhealthNumber 
+    *
 FROM applicant";
 
 $result = $conn->query($sql);
@@ -40,41 +36,35 @@ if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         // For applicant.js summary table
         $summary[] = [
-            'avatar' => $row['avatar'],
-            'firstName' => $row['firstName'],
-            'lastName' => $row['lastName'],
-            'email' => $row['email'],
-            'phone' => $row['phone'],
-            'position' => $row['position']
+            'ProfilePicture' => $row['ProfilePicture'],
+            'FirstName' => $row['FirstName'],
+            'LastName' => $row['LastName'],
+            'EmailAddress' => $row['EmailAddress'],
+            'ContactNumber' => $row['ContactNumber'],
+            'PositionApplied' => $row['PositionApplied']
         ];
 
         // For applicantSidebar.js detailed view
         $details[] = [
-            'avatar' => $row['avatar'],
-            'firstName' => $row['firstName'],
-            'lastName' => $row['lastName'],
-            'email' => $row['email'],
-            'phone' => $row['phone'],
-            'gender' => $row['gender'],  
-            'position' => $row['position'],
-            'birthMonth' => $row['birthMonth'],
-            'birthDay' => $row['birthDay'],
-            'birthYear' => $row['birthYear'],
-            'street1' => $row['street1'],
-            'street2' => $row['street2'],
-            'city' => $row['city'],
-            'state' => $row['state'],
-            'zip' => $row['zip'],
-            'resumeUrl' => $row['resumeUrl'],
-            'passport' => $row['passport'],
-            'diploma' => $row['diploma'],
-            'tor' => $row['tor'],
-            'medical' => $row['medical'],
-            'tinId' => $row['tinId'],
-            'nbiClearance' => $row['nbiClearance'],
-            'policeClearance' => $row['policeClearance'],
-            'pagibigNumber' => $row['pagibigNumber'],
-            'philhealthNumber' => $row['philhealthNumber']
+            'ProfilePicture' => $row['ProfilePicture'],
+            'FirstName' => $row['FirstName'],
+            'LastName' => $row['LastName'],
+            'Email' => $row['EmailAddress'],
+            'ContactNumber' => $row['ContactNumber'],
+            'Gender' => $row['Gender'],
+            'PositionApplied' => $row['PositionApplied'],
+            'BirthDate' => $row['BirthDate'],
+            'HomeAddress' => $row['HomeAddress'],
+            'Resume' => $row['Resume'],
+            'Passport' => $row['Passport'],
+            'Diploma' => $row['Diploma'],
+            'Tor' => $row['Tor'],
+            'Medical' => $row['Medical'],
+            'TinID' => $row['TinID'],
+            'NBIClearance' => $row['NBIClearance'],
+            'PoliceClearance' => $row['PoliceClearance'],
+            'PagIbig' => $row['PagIbig'],
+            'PhilHealth' => $row['PhilHealth']
         ];
     }
 } 

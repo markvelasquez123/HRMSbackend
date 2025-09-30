@@ -38,3 +38,14 @@ FROM imgtable";
 $result = $conn->query($sql);
 echo json_encode($employeee);
 exit;
+
+$sql = "SELECT 
+    *
+    FROM companytable";
+$result = $conn->query($sql);
+$companytable = [];
+if ($result && $result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $companytable[] = $row;
+    }
+}
