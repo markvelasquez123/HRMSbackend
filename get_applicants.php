@@ -30,9 +30,18 @@ FROM applicant";
 $result = $conn->query($sql);
 
 $summary = [];
+$seenEmails = []; // Track emails we've already added
 
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
+        // Skip if we've already seen this email
+        if (in_array($row['EmailAddress'], $seenEmails)) {
+            continue;
+        }
+        
+        // Add email to tracking array
+        $seenEmails[] = $row['EmailAddress'];
+        
         // For applicant.js summary table
         $summary[] = [
             'ProfilePicture' => $row['ProfilePicture'],
@@ -48,6 +57,7 @@ if ($result && $result->num_rows > 0) {
         ];
     }
 }
+
 $sql = "SELECT 
     Resume, Passport, Diploma, Tor, Medical, TinID, NBIClearance, PoliceClearance, PagIbig, PhilHealth
 FROM requirements";
