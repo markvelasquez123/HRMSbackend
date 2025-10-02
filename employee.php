@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $action = $_GET['action'] ?? '';
 
     if ($action === 'get') {
-        $sql = "SELECT * FROM employees ORDER BY FirstName, LastName";
+        $sql = "SELECT * FROM employeee ORDER BY FirstName, LastName";
         $result = $conn->query($sql);
 
         if ($result) {
@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $position = trim($_POST['Position'] ?? '');
     $hire_date = trim($_POST['hireDate'] ?? '');
     $birth_date = trim($_POST['birthDate'] ?? '');
-    $salary = trim($_POST['salary'] ?? '');
+    $Passport = trim($_POST['Passport'] ?? '');
     $street1 = trim($_POST['street1'] ?? '');
     $street2 = trim($_POST['street2'] ?? '');
     $city = trim($_POST['city'] ?? '');
@@ -139,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'Position' => $position,
         'hireDate' => $hire_date,
         'birthDate' => $birth_date,
-        'salary' => $salary,
+        'Passport' => $Passport,
         'street1' => $street1,
         'city' => $city,
         'state' => $state,
@@ -158,10 +158,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    if (!is_numeric($salary) || $salary < 0) {
-        echo json_encode(['success' => false, 'message' => 'Salary must be a valid positive number']);
-        exit();
-    }
+
 
     // Generate ID based on company
     $prefixes = [
@@ -196,7 +193,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO employees (
         idNumber, FirstName, LastName, Position, Department, employeeType, company,
         gender, hireDate, birthDate, email, phone, street1, street2, 
-        city, state, zip, ProfilePicture, ResumeFile, salary
+        city, state, zip, ProfilePicture, ResumeFile, Passport
     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
@@ -205,13 +202,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    $salary_decimal = floatval($salary);
+    
     $stmt->bind_param(
-        "sssssssssssssssssssd",
+        "ssssssssssssssssssss",
         $id_number, $first_name, $last_name, $position, $department,
         $employee_type, $company, $gender, $hire_date, $birth_date, $email,
         $phone, $street1, $street2, $city, $state, $zip,
-        $profile_picture, $resume_file, $salary_decimal
+        $profile_picture, $resume_file, $Passport
     );
 
     if ($stmt->execute()) {

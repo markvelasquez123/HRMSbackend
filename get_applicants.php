@@ -22,15 +22,14 @@ if ($conn->connect_error) {
     exit();
 }
 
-// Select all relevant columns for both summary and details
+
 $sql = "SELECT 
-    *
+    ProfilePicture, FirstName, MiddleName, LastName, Gender, PositionApplied, EmailAddress, ContactNumber, HomeAddress, BirthDate
 FROM applicant";
 
 $result = $conn->query($sql);
 
 $summary = [];
-$details = [];
 
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
@@ -38,23 +37,26 @@ if ($result && $result->num_rows > 0) {
         $summary[] = [
             'ProfilePicture' => $row['ProfilePicture'],
             'FirstName' => $row['FirstName'],
-            'LastName' => $row['LastName'],
+            'MiddleName' => $row['MiddleName'],
             'EmailAddress' => $row['EmailAddress'],
-            'ContactNumber' => $row['ContactNumber'],
-            'PositionApplied' => $row['PositionApplied']
-        ];
-
-        // For applicantSidebar.js detailed view
-        $details[] = [
-            'ProfilePicture' => $row['ProfilePicture'],
-            'FirstName' => $row['FirstName'],
             'LastName' => $row['LastName'],
-            'Email' => $row['EmailAddress'],
-            'ContactNumber' => $row['ContactNumber'],
             'Gender' => $row['Gender'],
+            'ContactNumber' => $row['ContactNumber'],
             'PositionApplied' => $row['PositionApplied'],
-            'BirthDate' => $row['BirthDate'],
             'HomeAddress' => $row['HomeAddress'],
+            'BirthDate' => $row['BirthDate']
+        ];
+    }
+}
+$sql = "SELECT 
+    Resume, Passport, Diploma, Tor, Medical, TinID, NBIClearance, PoliceClearance, PagIbig, PhilHealth
+FROM requirements";
+$result = $conn->query($sql);
+$details = [];
+if ($result && $result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        // For applicant.js summary table
+        $details[] = [
             'Resume' => $row['Resume'],
             'Passport' => $row['Passport'],
             'Diploma' => $row['Diploma'],
@@ -68,13 +70,13 @@ if ($result && $result->num_rows > 0) {
         ];
     }
 } 
-
 $conn->close();
 
 header('Content-Type: application/json');
 echo json_encode([
     'summary' => $summary,
     'details' => $details
+    
 ]);
 exit();
 ?>

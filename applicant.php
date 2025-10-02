@@ -56,7 +56,7 @@ $fileFieldMap = [
     "ProfilePicture" => "ProfilePicture", "Resume" => "Resume", "Passport" => "Passport", 
     "Diploma" => "Diploma", "Tor" => "Tor", "Medical" => "Medical", 
     "TinID" => "TinID", "NBIClearance" => "NBIClearance", 
-    "PoliceClearance" => "PoliceClearance", "Pag-Ibig" => "PagIbig", 
+    "PoliceClearance" => "PoliceClearance", "PagIbig" => "PagIbig", 
     "PhilHealth" => "PhilHealth"
 ];
 

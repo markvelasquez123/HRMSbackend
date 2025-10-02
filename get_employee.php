@@ -25,7 +25,7 @@ if ($conn->connect_error) {
 $sql = "SELECT 
     accid, FirstName, LastName, Position, Department, employeeType, gender, hireDate, birthDate, email, phone, 
     street1, street2, city, state, zip, profilePic
-FROM employees";
+FROM employeee";
 
 $result = $conn->query($sql);
 
@@ -67,6 +67,14 @@ if ($result && $result->num_rows > 0) {
             'state' => $row['state'],
             'zip' => $row['zip']
         ];
+    }
+    $sql = "SELECT DISTINCT Company FROM employeee";
+    $result = $conn->query($sql);
+    $companies = [];
+    if ($result && $result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $companies[] = $row['Company'];
+        }
     }
 }
 
