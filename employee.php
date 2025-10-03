@@ -190,11 +190,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_number = trim($_POST['idNumber'] ?? '');
 
     // Insert employee
-    $sql = "INSERT INTO employees (
-        idNumber, FirstName, LastName, Position, Department, employeeType, company,
-        gender, hireDate, birthDate, email, phone, street1, street2, 
-        city, state, zip, ProfilePicture, ResumeFile, Passport
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO employeee (
+        IDNumber, FirstName, LastName, Position, Department, EmployeeType, Company,
+        Gender, DateHired, Birthdate, EmailAddress, ContactNumber, ProfilePicture, HomeAddress, Passport
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
     if (!$stmt) {
@@ -205,10 +204,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $stmt->bind_param(
         "ssssssssssssssssssss",
-        $id_number, $first_name, $last_name, $position, $department,
-        $employee_type, $company, $gender, $hire_date, $birth_date, $email,
-        $phone, $street1, $street2, $city, $state, $zip,
-        $profile_picture, $resume_file, $Passport
+        $IDNumber, $FirstName, $LastName, $Position, $Department,
+        $EmployeeType, $Company, $Gender, $DateHired, $Birthdate, $EmailAddress,
+        $ContactNumber, $HomeAddress, $ProfilePicture, $Passport
     );
 
     if ($stmt->execute()) {
@@ -216,7 +214,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'success' => true,
             'message' => 'Employee added successfully',
             'employee_id' => $conn->insert_id,
-            'idNumber' => $id_number
+            'IDNumber' => $IDNumber
         ]);
     } else {
         echo json_encode(['success' => false, 'message' => 'Error inserting employee: ' . $stmt->error]);
