@@ -3,7 +3,7 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
-
+header("Access-Control-Allow-Credentials: true");
 // Handle preflight OPTIONS request
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
@@ -100,15 +100,15 @@ try {
             throw new Exception('Field Passport is required');
         }
         
-        // Check if employee ID already exists
-        $checkStmt = $pdo->prepare("SELECT COUNT(*) FROM employees WHERE IDNumber = :idNumber");
+        
+        $checkStmt = $pdo->prepare("SELECT COUNT(*) FROM employeee WHERE IDNumber = :idNumber");
         $checkStmt->execute([':idNumber' => $idNumber]);
         if ($checkStmt->fetchColumn() > 0) {
             throw new Exception('Employee ID already exists');
         }
         
         // Insert employee data
-        $sql = "INSERT INTO employees (
+        $sql = "INSERT INTO employeee (
             IDNumber, FirstName, LastName, MiddleName, Birthdate, Company, Gender,
             ContactNumber, EmailAddress, HomeAddress, Department, PositionApplied,
             EmployeeType, DateHired, Passport

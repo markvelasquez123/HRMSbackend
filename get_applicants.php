@@ -24,37 +24,43 @@ if ($conn->connect_error) {
 
 
 $sql = "SELECT 
-    ProfilePicture, FirstName, MiddleName, LastName, Gender, PositionApplied, EmailAddress, ContactNumber, HomeAddress, BirthDate
-FROM applicant";
+    id, ProfilePicture, FirstName, MiddleName, LastName, Gender, PositionApplied, EmailAddress, ContactNumber, HomeAddress, BirthDate
+FROM applicant
+ORDER BY id ASC";
 
 $result = $conn->query($sql);
 
 $summary = [];
-$seenEmails = []; // Track emails we've already added
+$emailMap = [];
+$allRows = [];
 
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        // Skip if we've already seen this email
-        if (in_array($row['EmailAddress'], $seenEmails)) {
-            continue;
+        $allRows[] = $row; 
+        $email = $row['EmailAddress'];
+        
+      
+        if (!isset($emailMap[$email]) || $row['id'] > $emailMap[$email]['id']) {
+            $emailMap[$email] = [
+                'id' => $row['id'],
+                'ProfilePicture' => $row['ProfilePicture'],
+                'FirstName' => $row['FirstName'],
+                'MiddleName' => $row['MiddleName'],
+                'EmailAddress' => $row['EmailAddress'],
+                'LastName' => $row['LastName'],
+                'Gender' => $row['Gender'],
+                'ContactNumber' => $row['ContactNumber'],
+                'PositionApplied' => $row['PositionApplied'],
+                'HomeAddress' => $row['HomeAddress'],
+                'BirthDate' => $row['BirthDate']
+            ];
         }
-        
-        // Add email to tracking array
-        $seenEmails[] = $row['EmailAddress'];
-        
-        // For applicant.js summary table
-        $summary[] = [
-            'ProfilePicture' => $row['ProfilePicture'],
-            'FirstName' => $row['FirstName'],
-            'MiddleName' => $row['MiddleName'],
-            'EmailAddress' => $row['EmailAddress'],
-            'LastName' => $row['LastName'],
-            'Gender' => $row['Gender'],
-            'ContactNumber' => $row['ContactNumber'],
-            'PositionApplied' => $row['PositionApplied'],
-            'HomeAddress' => $row['HomeAddress'],
-            'BirthDate' => $row['BirthDate']
-        ];
+    }
+    
+    
+    foreach ($emailMap as $applicant) {
+        unset($applicant['id']); 
+        $summary[] = $applicant;
     }
 }
 
@@ -65,7 +71,7 @@ $result = $conn->query($sql);
 $details = [];
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        // For applicant.js summary table
+        
         $details[] = [
             'Resume' => $row['Resume'],
             'Passport' => $row['Passport'],
@@ -85,8 +91,9 @@ $conn->close();
 header('Content-Type: application/json');
 echo json_encode([
     'summary' => $summary,
-    'details' => $details
-    
+    'details' => $details,
+    'debug_total_rows' => count($allRows),
+    'debug_unique_emails' => count($emailMap)
 ]);
 exit();
 ?>

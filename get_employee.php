@@ -24,7 +24,7 @@ if ($conn->connect_error) {
 
 $sql = "SELECT 
     accid, FirstName, LastName, Position, Department, employeeType, gender, hireDate, birthDate, email, phone, 
-    street1, street2, city, state, zip, profilePic
+    street1, street2, city, state, zip, profilePic, Company
 FROM employeee";
 
 $result = $conn->query($sql);
@@ -34,7 +34,6 @@ $details = [];
 
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        
         $summary[] = [
             'accid' => $row['accid'],
             'profilePic' => isset($row['profilePic']) ? $row['profilePic'] : null,
@@ -45,7 +44,6 @@ if ($result && $result->num_rows > 0) {
             'email' => $row['email'],
             'phone' => $row['phone']
         ];
-
         
         $details[] = [
             'accid' => $row['accid'],
@@ -68,15 +66,12 @@ if ($result && $result->num_rows > 0) {
             'zip' => $row['zip']
         ];
     }
-    $sql = "SELECT DISTINCT Company FROM employeee";
-    $result = $conn->query($sql);
-    $companies = [];
-    if ($result && $result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $companies[] = $row['Company'];
-        }
-    }
 }
 
 $conn->close();
 
+echo json_encode([
+    'summary' => $summary,
+    'details' => $details
+]);
+?>

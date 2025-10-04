@@ -1,10 +1,10 @@
 <?php
 
-header("Access-Control-Allow-Origin: http://localhost:3001");
+header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 header("Access-Control-Allow-Credentials: true");
-
+header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
@@ -49,7 +49,7 @@ $formFieldMap = [
     "FirstName" => "FirstName", "MiddleName" => "MiddleName", "LastName" => "LastName", 
     "Gender" => "Gender", "BirthDate" => "BirthDate", "EmailAddress" => "EmailAddress", 
     "ContactNumber" => "ContactNumber", "HomeAddress" => "HomeAddress", 
-    "PositionApplied" => "PositionApplied"
+    "PositionApplied" => "PositionApplied", "Company" => "Company"
 ];
 
 $fileFieldMap = [
@@ -80,9 +80,9 @@ if (isset($_POST['birthYear']) && isset($_POST['birthMonth']) && isset($_POST['b
 
 $sql = "INSERT INTO applicant (
     ProfilePicture, FirstName, MiddleName, LastName, Gender, BirthDate,
-    EmailAddress, ContactNumber, HomeAddress, PositionApplied
+    EmailAddress, ContactNumber, HomeAddress, PositionApplied, Company
 ) VALUES (
-    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
 )";
 
 $stmt = $conn->prepare($sql);
@@ -93,10 +93,11 @@ if ($stmt === false) {
 }
 
 $stmt->bind_param(
-    "ssssssssss", 
+    "sssssssssss", 
     $data["ProfilePicture"], $data["FirstName"], $data["MiddleName"], $data["LastName"],
     $data["Gender"], $data["BirthDate"], 
-    $data["EmailAddress"], $data["ContactNumber"], $data["HomeAddress"], $data["PositionApplied"]
+    $data["EmailAddress"], $data["ContactNumber"], $data["HomeAddress"], $data["PositionApplied"],
+    $data["Company"]
 );
 
 if ($stmt->execute()) {
