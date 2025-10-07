@@ -23,17 +23,17 @@ if ($conn->connect_error) {
 
 $data = json_decode(file_get_contents("php://input"), true);
 
-if (!$data || !isset($data['email'], $data['password'])) {
+if (!$data || !isset($data['EmailAddress'], $data['password'])) {
     echo json_encode(['success' => false, 'message' => 'Missing email or password']);
     exit();
 }
 
-$email = $data['email'];
+$EmailAddress = $data['EmailAddress'];
 $password = $data['password'];
 
 
-$stmt = $conn->prepare("SELECT email, password FROM signup WHERE email = ?");
-$stmt->bind_param("s", $email);
+$stmt = $conn->prepare("SELECT EmailAddress, password FROM signup WHERE EmailAddress = ?");
+$stmt->bind_param("s", $EmailAddress);
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -42,7 +42,7 @@ if ($result->num_rows === 1) {
     
     
     if ($password === $user['password']) {
-        echo json_encode(['success' => true, 'message' => 'Login successful', 'email' => $user['email']]);
+        echo json_encode(['success' => true, 'message' => 'Login successful', 'EmailAddress' => $user['EmailAddress']]);
     } else {
         echo json_encode(['success' => false, 'message' => 'Incorrect password']);
     }

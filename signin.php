@@ -5,7 +5,7 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
 header("Access-Control-Allow-Credentials: true");
 
 
-// --- Example user data (for demo only)
+
 $host = "localhost";
 $user = "root";
 $password = "";
@@ -16,14 +16,14 @@ if ($conn->connect_error) {
     exit();
 }
 
-// --- Function 1: Hello
+
 function hello() {
     echo json_encode(['message' => 'Hello from signin.php!']);
 }
 
-// --- Function 2: Sign in
+
 function signin($demo_user) {
-    // Get raw input from frontend (POST)
+ 
     $input = json_decode(file_get_contents("php://input"), true);
 
     $username = $input['username'] ?? '';
@@ -36,7 +36,7 @@ function signin($demo_user) {
     }
 }
 
-// --- Router (based on ?action=...)
+
 $action = $_GET['action'] ?? '';
 
 switch ($action) {
