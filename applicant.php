@@ -1,10 +1,4 @@
 <?php
-// Enable error reporting for debugging
-error_reporting(E_ALL);
-ini_set('display_errors', 0); // Don't display errors in output
-ini_set('log_errors', 1);
-ini_set('error_log', __DIR__ . '/php_errors.log');
-
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
@@ -50,7 +44,6 @@ function saveFile($fieldName, $conn) {
 }
 
 function generateAppID($conn, $company) {
-    // Generate company prefix based on company name
     $companyPrefix = '';
     switch ($company) {
         case 'Asia Navis':
@@ -64,37 +57,21 @@ function generateAppID($conn, $company) {
             break;
     }
     
+    // Count only applicants from the same company
+    $countStmt = $conn->prepare("SELECT COUNT(*) as total FROM applicant WHERE Company = ?");
+    $countStmt->bind_param("s", $company);
+    $countStmt->execute();
+    $countResult = $countStmt->get_result();
+    $applicantCount = 1;
     
-    $year = date('y');   
-    $month = date('m');  
-    $day = date('d');   
-    
-    $dateStr = $year . $month . $day;
-    
-
-    $pattern = $companyPrefix . '-' . $dateStr . '%';
-    $query = "SELECT appID FROM applicant WHERE appID LIKE ? ORDER BY appID DESC LIMIT 1";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param('s', $pattern);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    
-    $sequence = 1; 
-    if ($result && $result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $lastAppID = $row['appID'];
-        
-        $parts = explode('-', $lastAppID);
-        if (count($parts) >= 2) {
-          
-            $lastPart = $parts[1];
-            $sequence = intval(substr($lastPart, 6)) + 1; 
-        }
+    if ($countResult && $row = $countResult->fetch_assoc()) {
+        $applicantCount = $row['total'] + 1;
     }
-    $stmt->close();
+    $countStmt->close();
     
+    $applicantNum = str_pad($applicantCount, 3, '0', STR_PAD_LEFT);
     
-    return $companyPrefix . '-' . $dateStr . $sequence;
+    return $companyPrefix . '-' . $applicantNum;
 }
 
 $formFieldMap = [
@@ -133,10 +110,8 @@ foreach ($fileFieldMap as $postField => $dbColumn) {
     $data[$dbColumn] = saveFile($postField, $conn);
 }
 
-// Generate unique appID based on company and date
 $appID = generateAppID($conn, $data["Company"]);
 
-// Insert into applicant table with appID
 $sql = "INSERT INTO applicant (
     appID, ProfilePicture, FirstName, MiddleName, LastName, Gender, BirthDate,
     EmailAddress, ContactNumber, HomeAddress, PositionApplied, Company
@@ -168,10 +143,8 @@ $stmt->bind_param(
 );
 
 if ($stmt->execute()) {
-    // Get the auto-increment ID from applicant table
     $applicantTableID = $conn->insert_id;
 
-    // Insert into requirements table with the SAME appID (foreign key)
     $sqlReq = "INSERT INTO requirements(
         appID, Resume, Passport, Diploma, Tor, Medical, TinID, 
         NBIClearance, PoliceClearance, PagIbig, PhilHealth
@@ -188,7 +161,7 @@ if ($stmt->execute()) {
     
     $stmtReq->bind_param(
         "sssssssssss",
-        $appID,  // Same appID as in applicant table
+        $appID,
         $data["Resume"], 
         $data["Passport"], 
         $data["Diploma"], 

@@ -24,45 +24,37 @@ if ($conn->connect_error) {
 
 
 $sql = "SELECT 
-    id, ProfilePicture, FirstName, MiddleName, LastName, Gender, PositionApplied, EmailAddress, ContactNumber, HomeAddress, BirthDate
-FROM applicant
-ORDER BY id ASC";
+    appID, ProfilePicture, FirstName, MiddleName, LastName, Gender, PositionApplied, EmailAddress, ContactNumber, HomeAddress, BirthDate
+FROM applicant";
 
 $result = $conn->query($sql);
 
+if ($result === false) {
+    http_response_code(500);
+    echo json_encode(['error' => 'Query failed: ' . $conn->error]);
+    exit();
+}
+
 $summary = [];
-$emailMap = [];
-$allRows = [];
 
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        $allRows[] = $row; 
-        $email = $row['EmailAddress'];
-        
-      
-        if (!isset($emailMap[$email]) || $row['id'] > $emailMap[$email]['id']) {
-            $emailMap[$email] = [
-                'id' => $row['id'],
-                'ProfilePicture' => $row['ProfilePicture'],
-                'FirstName' => $row['FirstName'],
-                'MiddleName' => $row['MiddleName'],
-                'EmailAddress' => $row['EmailAddress'],
-                'LastName' => $row['LastName'],
-                'Gender' => $row['Gender'],
-                'ContactNumber' => $row['ContactNumber'],
-                'PositionApplied' => $row['PositionApplied'],
-                'HomeAddress' => $row['HomeAddress'],
-                'BirthDate' => $row['BirthDate']
-            ];
-        }
-    }
-    
-    
-    foreach ($emailMap as $applicant) {
-        unset($applicant['id']); 
-        $summary[] = $applicant;
+        $summary[] = [
+            'appID' => $row['appID'],
+            'ProfilePicture' => $row['ProfilePicture'],
+            'FirstName' => $row['FirstName'],
+            'MiddleName' => $row['MiddleName'],
+            'EmailAddress' => $row['EmailAddress'],
+            'LastName' => $row['LastName'],
+            'Gender' => $row['Gender'],
+            'ContactNumber' => $row['ContactNumber'],
+            'PositionApplied' => $row['PositionApplied'],
+            'HomeAddress' => $row['HomeAddress'],
+            'BirthDate' => $row['BirthDate']
+        ];
     }
 }
+
 
 $sql = "SELECT 
     Resume, Passport, Diploma, Tor, Medical, TinID, NBIClearance, PoliceClearance, PagIbig, PhilHealth
@@ -91,9 +83,7 @@ $conn->close();
 header('Content-Type: application/json');
 echo json_encode([
     'summary' => $summary,
-    'details' => $details,
-    'debug_total_rows' => count($allRows),
-    'debug_unique_emails' => count($emailMap)
+    'details' => $details
 ]);
 exit();
 ?>
