@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 header("Access-Control-Allow-Origin: http://localhost:3000");
 header("Access-Control-Allow-Methods: POST, OPTIONS, GET");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
@@ -9,17 +7,6 @@ header("Access-Control-Allow-Credentials: true");
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
-    exit();
-}
-
-
-$orgPrefix = isset($_GET['org']) ? $_GET['org'] : null;
-
-
-$validPrefixes = ['RGL', 'ASN', 'PHR'];
-if (!$orgPrefix || !in_array($orgPrefix, $validPrefixes)) {
-    http_response_code(400);
-    echo json_encode(['error' => 'Invalid organization prefix']);
     exit();
 }
 
@@ -35,25 +22,27 @@ if ($conn->connect_error) {
     exit();
 }
 
-
-$sql = "SELECT * FROM employeee WHERE IDNumber LIKE ?";
-
-$searchPattern = $orgPrefix . '-%'; 
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $searchPattern);
-$stmt->execute();
-$result = $stmt->get_result();
-
+$sql = "SELECT * FROM employeee";
+$result = $conn->query($sql);
 $employeee = [];
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $employeee[] = $row;
     }
 }
-
-$stmt->close();
-$conn->close();
-
+$sql = "SELECT 
+    *
+    FROM companytable";
+$result = $conn->query($sql);
+$companytable = [];
+if ($result && $result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $companytable[] = $row;
+    }
+}
+$sql = "SELECT
+*
+FROM imgtable";
+$result = $conn->query($sql);
 echo json_encode($employeee);
-exit();
-?>	
+exit;

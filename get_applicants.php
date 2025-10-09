@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 header("Access-Control-Allow-Origin: http://localhost:3000");
 header("Access-Control-Allow-Methods: POST, OPTIONS, GET");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
@@ -6,6 +8,17 @@ header("Access-Control-Allow-Credentials: true");
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
+    exit();
+}
+
+// Get organization prefix from query parameter
+$orgPrefix = isset($_GET['org']) ? $_GET['org'] : null;
+
+// Validate the prefix
+$validPrefixes = ['RGL', 'ASN', 'PHR'];
+if (!$orgPrefix || !in_array($orgPrefix, $validPrefixes)) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Invalid organization prefix']);
     exit();
 }
 
@@ -22,18 +35,18 @@ if ($conn->connect_error) {
     exit();
 }
 
-
+// CRITICAL: Filter by appID prefix using LIKE
 $sql = "SELECT 
-    appID, ProfilePicture, FirstName, MiddleName, LastName, Gender, PositionApplied, EmailAddress, ContactNumber, HomeAddress, BirthDate
-FROM applicant";
+    appID, ProfilePicture, FirstName, MiddleName, LastName, Gender, PositionApplied, 
+    EmailAddress, ContactNumber, HomeAddress, BirthDate
+FROM applicant
+WHERE appID LIKE ?";
 
-$result = $conn->query($sql);
-
-if ($result === false) {
-    http_response_code(500);
-    echo json_encode(['error' => 'Query failed: ' . $conn->error]);
-    exit();
-}
+$searchPattern = $orgPrefix . '-%'; // "RGL-%" or "ASN-%" or "PHR-%"
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $searchPattern);
+$stmt->execute();
+$result = $stmt->get_result();
 
 $summary = [];
 
@@ -55,15 +68,19 @@ if ($result && $result->num_rows > 0) {
     }
 }
 
+// Also filter requirements by appID prefix
+$sql = "SELECT r.*
+FROM requirements r
+WHERE r.appID LIKE ?";
 
-$sql = "SELECT 
-    Resume, Passport, Diploma, Tor, Medical, TinID, NBIClearance, PoliceClearance, PagIbig, PhilHealth
-FROM requirements";
-$result = $conn->query($sql);
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $searchPattern);
+$stmt->execute();
+$result = $stmt->get_result();
+
 $details = [];
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        
         $details[] = [
             'Resume' => $row['Resume'],
             'Passport' => $row['Passport'],
@@ -77,7 +94,9 @@ if ($result && $result->num_rows > 0) {
             'PhilHealth' => $row['PhilHealth']
         ];
     }
-} 
+}
+
+$stmt->close();
 $conn->close();
 
 header('Content-Type: application/json');
