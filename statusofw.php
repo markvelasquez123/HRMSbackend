@@ -58,27 +58,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $employeeId = $data['employeeId'];
         $status = $data['status'];
         
-        // Validate status values
+       
         $validStatuses = ['On Process', 'Deployed', 'Repatriated'];
         if (!in_array($status, $validStatuses)) {
             throw new Exception('Invalid status. Must be: ' . implode(', ', $validStatuses));
         }
         
-        // Check if employee exists
+        
         $checkStmt = $pdo->prepare("SELECT id FROM ofw WHERE id = ?");
         $checkStmt->execute([$employeeId]);
         if (!$checkStmt->fetch()) {
             throw new Exception('Employee not found with ID: ' . $employeeId);
         }
         
-        // Check if status column exists, if not add it
+        
         $columnCheck = $pdo->query("SHOW COLUMNS FROM ofw LIKE 'status'");
         if ($columnCheck->rowCount() == 0) {
             error_log("Adding status column to ofw table");
             $pdo->exec("ALTER TABLE ofw ADD COLUMN status VARCHAR(50) DEFAULT 'On Process'");
         }
         
-        // Update the status
+       
         $updateStmt = $pdo->prepare("UPDATE ofw SET status = ?, updated_at = NOW() WHERE id = ?");
         $result = $updateStmt->execute([$status, $employeeId]);
         

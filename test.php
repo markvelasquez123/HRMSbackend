@@ -12,9 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-
 $orgPrefix = isset($_GET['org']) ? $_GET['org'] : null;
-
 
 $validPrefixes = ['RGL', 'ASN', 'PHR'];
 if (!$orgPrefix || !in_array($orgPrefix, $validPrefixes)) {
@@ -38,7 +36,7 @@ if ($conn->connect_error) {
 
 $sql = "SELECT * FROM employeee WHERE IDNumber LIKE ?";
 
-$searchPattern = $orgPrefix . '-%'; 
+$searchPattern = $orgPrefix . '%'; 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $searchPattern);
 $stmt->execute();
@@ -56,4 +54,4 @@ $conn->close();
 
 echo json_encode($employeee);
 exit();
-?>	
+?>

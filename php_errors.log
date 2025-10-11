@@ -1560,3 +1560,597 @@
 )
 
 [09-Sep-2025 21:16:14 Europe/Berlin] Status updated successfully for employee ID: 7 to status: Deployed
+[10-Oct-2025 23:40:48 Europe/Berlin] Request method: POST
+[10-Oct-2025 23:40:48 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[10-Oct-2025 23:40:48 Europe/Berlin] Raw JSON input: {"appID":"PHR-001","firstName":"Lakbay","lastName":"Dagat","middleName":"Sea","email":"marino@gmail.com","phone":"09523211233","position":"Seaman","department":"OFW","employeeType":"OFW","dateHired":"2025-10-10","birthDate":"2000-02-05","gender":"Male","homeAddress":"5125125","status":"On Process","interviewDate":"","interviewStatus":"","interviewResult":""}
+[10-Oct-2025 23:40:48 Europe/Berlin] Decoded data: Array
+(
+    [appID] => PHR-001
+    [firstName] => Lakbay
+    [lastName] => Dagat
+    [middleName] => Sea
+    [email] => marino@gmail.com
+    [phone] => 09523211233
+    [position] => Seaman
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-10-10
+    [birthDate] => 2000-02-05
+    [gender] => Male
+    [homeAddress] => 5125125
+    [status] => On Process
+    [interviewDate] => 
+    [interviewStatus] => 
+    [interviewResult] => 
+)
+
+[10-Oct-2025 23:40:48 Europe/Berlin] Insert data: Array
+(
+    [0] => PHR-001
+    [1] => Lakbay
+    [2] => Dagat
+    [3] => Sea
+    [4] => marino@gmail.com
+    [5] => 09523211233
+    [6] => Seaman
+    [7] => OFW
+    [8] => OFW
+    [9] => 2025-10-10
+    [10] => 2000-02-05
+    [11] => Male
+    [12] => 5125125
+    [13] => On Process
+)
+
+[10-Oct-2025 23:40:48 Europe/Berlin] Warning: Could not remove applicant: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hrms.applicants' doesn't exist
+[10-Oct-2025 23:40:48 Europe/Berlin] OFW successfully created with ID: 8
+[10-Oct-2025 23:42:05 Europe/Berlin] Request method: POST
+[10-Oct-2025 23:42:05 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[10-Oct-2025 23:42:05 Europe/Berlin] Raw JSON input: {"appID":"PHR-001","firstName":"Lakbay","lastName":"Dagat","middleName":"Sea","email":"marino@gmail.com","phone":"09523211233","position":"Seaman","department":"OFW","employeeType":"OFW","dateHired":"2025-10-10","birthDate":"2000-02-05","gender":"Male","homeAddress":"5125125","status":"On Process","interviewDate":"","interviewStatus":"","interviewResult":""}
+[10-Oct-2025 23:42:05 Europe/Berlin] Decoded data: Array
+(
+    [appID] => PHR-001
+    [firstName] => Lakbay
+    [lastName] => Dagat
+    [middleName] => Sea
+    [email] => marino@gmail.com
+    [phone] => 09523211233
+    [position] => Seaman
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-10-10
+    [birthDate] => 2000-02-05
+    [gender] => Male
+    [homeAddress] => 5125125
+    [status] => On Process
+    [interviewDate] => 
+    [interviewStatus] => 
+    [interviewResult] => 
+)
+
+[10-Oct-2025 23:42:05 Europe/Berlin] Error: An OFW with this email already exists
+[10-Oct-2025 23:42:05 Europe/Berlin] Stack trace: #0 {main}
+[10-Oct-2025 23:43:36 Europe/Berlin] Request method: POST
+[10-Oct-2025 23:43:36 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[10-Oct-2025 23:43:36 Europe/Berlin] Raw JSON input: {"appID":"PHR-001","firstName":"Lakbay","lastName":"Dagat","middleName":"Sea","email":"marino1@gmail.com","phone":"09523211233","position":"Seaman","department":"OFW","employeeType":"OFW","dateHired":"2025-10-10","birthDate":"2000-02-05","gender":"Male","homeAddress":"5125125","status":"On Process","interviewDate":"","interviewStatus":"","interviewResult":""}
+[10-Oct-2025 23:43:36 Europe/Berlin] Decoded data: Array
+(
+    [appID] => PHR-001
+    [firstName] => Lakbay
+    [lastName] => Dagat
+    [middleName] => Sea
+    [email] => marino1@gmail.com
+    [phone] => 09523211233
+    [position] => Seaman
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-10-10
+    [birthDate] => 2000-02-05
+    [gender] => Male
+    [homeAddress] => 5125125
+    [status] => On Process
+    [interviewDate] => 
+    [interviewStatus] => 
+    [interviewResult] => 
+)
+
+[10-Oct-2025 23:43:36 Europe/Berlin] Insert data: Array
+(
+    [0] => PHR-001
+    [1] => Lakbay
+    [2] => Dagat
+    [3] => Sea
+    [4] => marino1@gmail.com
+    [5] => 09523211233
+    [6] => Seaman
+    [7] => OFW
+    [8] => OFW
+    [9] => 2025-10-10
+    [10] => 2000-02-05
+    [11] => Male
+    [12] => 5125125
+    [13] => On Process
+)
+
+[10-Oct-2025 23:43:36 Europe/Berlin] Error: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'PHR-001' for key 'employeeId'
+[10-Oct-2025 23:43:36 Europe/Berlin] Stack trace: #0 C:\Users\Mark V\OneDrive\Documents\GitHub\xampp\htdocs\HRMSbackend\add_ofw.php(186): PDOStatement->execute(Array)
+#1 {main}
+[10-Oct-2025 23:44:18 Europe/Berlin] Request method: POST
+[10-Oct-2025 23:44:18 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[10-Oct-2025 23:44:18 Europe/Berlin] Raw JSON input: {"appID":"PHR-001","firstName":"Lakbay","lastName":"Dagat","middleName":"Sea","email":"marino1@gmail.com","phone":"09523211233","position":"Seaman","department":"OFW","employeeType":"OFW","dateHired":"2025-10-10","birthDate":"2000-02-05","gender":"Male","homeAddress":"5125125","status":"On Process","interviewDate":"","interviewStatus":"","interviewResult":""}
+[10-Oct-2025 23:44:18 Europe/Berlin] Decoded data: Array
+(
+    [appID] => PHR-001
+    [firstName] => Lakbay
+    [lastName] => Dagat
+    [middleName] => Sea
+    [email] => marino1@gmail.com
+    [phone] => 09523211233
+    [position] => Seaman
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-10-10
+    [birthDate] => 2000-02-05
+    [gender] => Male
+    [homeAddress] => 5125125
+    [status] => On Process
+    [interviewDate] => 
+    [interviewStatus] => 
+    [interviewResult] => 
+)
+
+[10-Oct-2025 23:44:18 Europe/Berlin] Insert data: Array
+(
+    [0] => PHR-001
+    [1] => Lakbay
+    [2] => Dagat
+    [3] => Sea
+    [4] => marino1@gmail.com
+    [5] => 09523211233
+    [6] => Seaman
+    [7] => OFW
+    [8] => OFW
+    [9] => 2025-10-10
+    [10] => 2000-02-05
+    [11] => Male
+    [12] => 5125125
+    [13] => On Process
+)
+
+[10-Oct-2025 23:44:18 Europe/Berlin] Error: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'PHR-001' for key 'employeeId'
+[10-Oct-2025 23:44:18 Europe/Berlin] Stack trace: #0 C:\Users\Mark V\OneDrive\Documents\GitHub\xampp\htdocs\HRMSbackend\add_ofw.php(186): PDOStatement->execute(Array)
+#1 {main}
+[10-Oct-2025 23:44:27 Europe/Berlin] Request method: POST
+[10-Oct-2025 23:44:27 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[10-Oct-2025 23:44:27 Europe/Berlin] Raw JSON input: {"appID":"PHR-001","firstName":"Lakbay","lastName":"Dagat","middleName":"Sea","email":"marino1@gmail.com","phone":"09523211233","position":"Seaman","department":"OFW","employeeType":"OFW","dateHired":"2025-10-10","birthDate":"2000-02-05","gender":"Male","homeAddress":"5125125","status":"On Process","interviewDate":"","interviewStatus":"","interviewResult":""}
+[10-Oct-2025 23:44:27 Europe/Berlin] Decoded data: Array
+(
+    [appID] => PHR-001
+    [firstName] => Lakbay
+    [lastName] => Dagat
+    [middleName] => Sea
+    [email] => marino1@gmail.com
+    [phone] => 09523211233
+    [position] => Seaman
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-10-10
+    [birthDate] => 2000-02-05
+    [gender] => Male
+    [homeAddress] => 5125125
+    [status] => On Process
+    [interviewDate] => 
+    [interviewStatus] => 
+    [interviewResult] => 
+)
+
+[10-Oct-2025 23:44:27 Europe/Berlin] Insert data: Array
+(
+    [0] => PHR-001
+    [1] => Lakbay
+    [2] => Dagat
+    [3] => Sea
+    [4] => marino1@gmail.com
+    [5] => 09523211233
+    [6] => Seaman
+    [7] => OFW
+    [8] => OFW
+    [9] => 2025-10-10
+    [10] => 2000-02-05
+    [11] => Male
+    [12] => 5125125
+    [13] => On Process
+)
+
+[10-Oct-2025 23:44:27 Europe/Berlin] Warning: Could not remove applicant: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hrms.applicants' doesn't exist
+[10-Oct-2025 23:44:27 Europe/Berlin] OFW successfully created with ID: 11
+[10-Oct-2025 23:53:59 Europe/Berlin] Request method: POST
+[10-Oct-2025 23:53:59 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[10-Oct-2025 23:53:59 Europe/Berlin] Raw JSON input: {"appID":"PHR-001","firstName":"Lakbay","lastName":"Dagat","middleName":"Sea","email":"marino1@gmail.com","phone":"09523211233","position":"Seaman","department":"OFW","employeeType":"OFW","dateHired":"2025-10-10","birthDate":"2000-02-05","gender":"Male","homeAddress":"5125125","status":"On Process","interviewDate":"","interviewStatus":"","interviewResult":""}
+[10-Oct-2025 23:53:59 Europe/Berlin] Decoded data: Array
+(
+    [appID] => PHR-001
+    [firstName] => Lakbay
+    [lastName] => Dagat
+    [middleName] => Sea
+    [email] => marino1@gmail.com
+    [phone] => 09523211233
+    [position] => Seaman
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-10-10
+    [birthDate] => 2000-02-05
+    [gender] => Male
+    [homeAddress] => 5125125
+    [status] => On Process
+    [interviewDate] => 
+    [interviewStatus] => 
+    [interviewResult] => 
+)
+
+[10-Oct-2025 23:53:59 Europe/Berlin] Error: An OFW with this email already exists
+[10-Oct-2025 23:53:59 Europe/Berlin] Stack trace: #0 {main}
+[10-Oct-2025 23:55:27 Europe/Berlin] Request method: POST
+[10-Oct-2025 23:55:27 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[10-Oct-2025 23:55:27 Europe/Berlin] Raw JSON input: {"appID":"PHR-002","firstName":"Swim","lastName":"Sea","middleName":"Mer","email":"swim@gmail.com","phone":"09425211233","position":"Seamn","department":"OFW","employeeType":"OFW","dateHired":"2025-10-10","birthDate":"2000-02-05","gender":"Male","homeAddress":"123123123","status":"On Process","interviewDate":"","interviewStatus":"","interviewResult":""}
+[10-Oct-2025 23:55:27 Europe/Berlin] Decoded data: Array
+(
+    [appID] => PHR-002
+    [firstName] => Swim
+    [lastName] => Sea
+    [middleName] => Mer
+    [email] => swim@gmail.com
+    [phone] => 09425211233
+    [position] => Seamn
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-10-10
+    [birthDate] => 2000-02-05
+    [gender] => Male
+    [homeAddress] => 123123123
+    [status] => On Process
+    [interviewDate] => 
+    [interviewStatus] => 
+    [interviewResult] => 
+)
+
+[10-Oct-2025 23:55:27 Europe/Berlin] Generated OFW ID: OFW-202510-001 for month: 202510
+[10-Oct-2025 23:55:27 Europe/Berlin] Insert data: Array
+(
+    [0] => OFW-202510-001
+    [1] => Swim
+    [2] => Sea
+    [3] => Mer
+    [4] => swim@gmail.com
+    [5] => 09425211233
+    [6] => Seamn
+    [7] => OFW
+    [8] => OFW
+    [9] => 2025-10-10
+    [10] => 2000-02-05
+    [11] => Male
+    [12] => 123123123
+    [13] => On Process
+)
+
+[10-Oct-2025 23:55:27 Europe/Berlin] Warning: Could not remove applicant: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hrms.applicants' doesn't exist
+[10-Oct-2025 23:55:27 Europe/Berlin] OFW successfully created with ID: 12, appID: OFW-202510-001
+[11-Oct-2025 00:05:10 Europe/Berlin] Request method: POST
+[11-Oct-2025 00:05:10 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[11-Oct-2025 00:05:10 Europe/Berlin] Raw JSON input: {"appID":"PHR-003","firstName":"sdasdadqweq","lastName":"qweqweqwewqe","middleName":"sdadasdasd","email":"semen@gmail.com","phone":"09522311233","position":"Seaman","department":"OFW","employeeType":"OFW","dateHired":"2025-10-10","birthDate":"2000-02-04","gender":"Male","homeAddress":"123123","status":"On Process","interviewDate":"","interviewStatus":"","interviewResult":""}
+[11-Oct-2025 00:05:10 Europe/Berlin] Decoded data: Array
+(
+    [appID] => PHR-003
+    [firstName] => sdasdadqweq
+    [lastName] => qweqweqwewqe
+    [middleName] => sdadasdasd
+    [email] => semen@gmail.com
+    [phone] => 09522311233
+    [position] => Seaman
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-10-10
+    [birthDate] => 2000-02-04
+    [gender] => Male
+    [homeAddress] => 123123
+    [status] => On Process
+    [interviewDate] => 
+    [interviewStatus] => 
+    [interviewResult] => 
+)
+
+[11-Oct-2025 00:05:10 Europe/Berlin] Generated OFW ID: OFW2510001 for year-month: 2510
+[11-Oct-2025 00:05:10 Europe/Berlin] Insert data: Array
+(
+    [0] => OFW2510001
+    [1] => sdasdadqweq
+    [2] => qweqweqwewqe
+    [3] => sdadasdasd
+    [4] => semen@gmail.com
+    [5] => 09522311233
+    [6] => Seaman
+    [7] => OFW
+    [8] => OFW
+    [9] => 2025-10-10
+    [10] => 2000-02-04
+    [11] => Male
+    [12] => 123123
+    [13] => On Process
+)
+
+[11-Oct-2025 00:05:10 Europe/Berlin] Warning: Could not remove applicant: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hrms.applicants' doesn't exist
+[11-Oct-2025 00:05:10 Europe/Berlin] OFW successfully created with ID: 13, appID: OFW2510001
+[11-Oct-2025 00:16:28 Europe/Berlin] Request method: POST
+[11-Oct-2025 00:16:28 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[11-Oct-2025 00:16:28 Europe/Berlin] Raw JSON input: {"appID":"PHR-004","firstName":"csdfgdfgaw","lastName":"sdfgsdfgdf","middleName":"sdfdvdsfgsdfg","email":"mansea@gmail.com","phone":"09241231233","position":"Seamn","department":"OFW","employeeType":"OFW","dateHired":"2025-10-10","birthDate":"2000-02-05","gender":"Male","homeAddress":"4224","status":"On Process","interviewDate":"","interviewStatus":"","interviewResult":""}
+[11-Oct-2025 00:16:28 Europe/Berlin] Decoded data: Array
+(
+    [appID] => PHR-004
+    [firstName] => csdfgdfgaw
+    [lastName] => sdfgsdfgdf
+    [middleName] => sdfdvdsfgsdfg
+    [email] => mansea@gmail.com
+    [phone] => 09241231233
+    [position] => Seamn
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-10-10
+    [birthDate] => 2000-02-05
+    [gender] => Male
+    [homeAddress] => 4224
+    [status] => On Process
+    [interviewDate] => 
+    [interviewStatus] => 
+    [interviewResult] => 
+)
+
+[11-Oct-2025 00:16:28 Europe/Berlin] Generated OFW ID: OFW2510002 for year-month: 2510
+[11-Oct-2025 00:16:28 Europe/Berlin] Insert data: Array
+(
+    [0] => OFW2510002
+    [1] => csdfgdfgaw
+    [2] => sdfgsdfgdf
+    [3] => sdfdvdsfgsdfg
+    [4] => mansea@gmail.com
+    [5] => 09241231233
+    [6] => Seamn
+    [7] => OFW
+    [8] => OFW
+    [9] => 2025-10-10
+    [10] => 2000-02-05
+    [11] => Male
+    [12] => 4224
+    [13] => On Process
+)
+
+[11-Oct-2025 00:16:28 Europe/Berlin] Warning: Could not remove applicant: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hrms.applicants' doesn't exist
+[11-Oct-2025 00:16:28 Europe/Berlin] OFW successfully created with ID: 14, appID: OFW2510002
+[11-Oct-2025 00:16:28 Europe/Berlin] Delete applicant - Received data: Array
+(
+    [email] => mansea@gmail.com
+)
+
+[11-Oct-2025 00:16:28 Europe/Berlin] Attempting to delete applicant with email: mansea@gmail.com
+[11-Oct-2025 00:16:28 Europe/Berlin] Error deleting applicant: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hrms.applicants' doesn't exist
+[11-Oct-2025 00:23:20 Europe/Berlin] Request method: POST
+[11-Oct-2025 00:23:20 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[11-Oct-2025 00:23:20 Europe/Berlin] Raw JSON input: {"appID":"PHR-004","firstName":"csdfgdfgaw","lastName":"sdfgsdfgdf","middleName":"sdfdvdsfgsdfg","email":"mansea@gmail.com","phone":"09241231233","position":"Seamn","department":"OFW","employeeType":"OFW","dateHired":"2025-10-10","birthDate":"2000-02-05","gender":"Male","homeAddress":"4224","status":"On Process","interviewDate":"","interviewStatus":"","interviewResult":""}
+[11-Oct-2025 00:23:20 Europe/Berlin] Decoded data: Array
+(
+    [appID] => PHR-004
+    [firstName] => csdfgdfgaw
+    [lastName] => sdfgsdfgdf
+    [middleName] => sdfdvdsfgsdfg
+    [email] => mansea@gmail.com
+    [phone] => 09241231233
+    [position] => Seamn
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-10-10
+    [birthDate] => 2000-02-05
+    [gender] => Male
+    [homeAddress] => 4224
+    [status] => On Process
+    [interviewDate] => 
+    [interviewStatus] => 
+    [interviewResult] => 
+)
+
+[11-Oct-2025 00:23:20 Europe/Berlin] Generated OFW ID: OFW2510001 for year-month: 2510
+[11-Oct-2025 00:23:20 Europe/Berlin] Insert data: Array
+(
+    [0] => OFW2510001
+    [1] => csdfgdfgaw
+    [2] => sdfgsdfgdf
+    [3] => sdfdvdsfgsdfg
+    [4] => mansea@gmail.com
+    [5] => 09241231233
+    [6] => Seamn
+    [7] => OFW
+    [8] => OFW
+    [9] => 2025-10-10
+    [10] => 2000-02-05
+    [11] => Male
+    [12] => 4224
+    [13] => On Process
+)
+
+[11-Oct-2025 00:23:20 Europe/Berlin] Warning: Could not remove applicant: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hrms.applicants' doesn't exist
+[11-Oct-2025 00:23:20 Europe/Berlin] OFW successfully created with ID: 1, appID: OFW2510001
+[11-Oct-2025 00:23:20 Europe/Berlin] Delete applicant - Received data: Array
+(
+    [email] => mansea@gmail.com
+    [EmailAddress] => mansea@gmail.com
+)
+
+[11-Oct-2025 00:23:20 Europe/Berlin] Attempting to delete applicant with email: mansea@gmail.com
+[11-Oct-2025 00:23:20 Europe/Berlin] Error deleting applicant: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hrms.applicants' doesn't exist
+[11-Oct-2025 00:24:58 Europe/Berlin] Request method: POST
+[11-Oct-2025 00:24:58 Europe/Berlin] Request URI: /HRMSbackend/add_ofw.php
+[11-Oct-2025 00:24:58 Europe/Berlin] Raw JSON input: {"appID":"PHR-003","firstName":"sdasdadqweq","lastName":"qweqweqwewqe","middleName":"sdadasdasd","email":"semen@gmail.com","phone":"09522311233","position":"Seaman","department":"OFW","employeeType":"OFW","dateHired":"2025-10-10","birthDate":"2000-02-04","gender":"Male","homeAddress":"123123","status":"On Process","interviewDate":"","interviewStatus":"","interviewResult":""}
+[11-Oct-2025 00:24:58 Europe/Berlin] Decoded data: Array
+(
+    [appID] => PHR-003
+    [firstName] => sdasdadqweq
+    [lastName] => qweqweqwewqe
+    [middleName] => sdadasdasd
+    [email] => semen@gmail.com
+    [phone] => 09522311233
+    [position] => Seaman
+    [department] => OFW
+    [employeeType] => OFW
+    [dateHired] => 2025-10-10
+    [birthDate] => 2000-02-04
+    [gender] => Male
+    [homeAddress] => 123123
+    [status] => On Process
+    [interviewDate] => 
+    [interviewStatus] => 
+    [interviewResult] => 
+)
+
+[11-Oct-2025 00:24:58 Europe/Berlin] Generated OFW ID: OFW2510002 for year-month: 2510
+[11-Oct-2025 00:24:58 Europe/Berlin] Insert data: Array
+(
+    [0] => OFW2510002
+    [1] => sdasdadqweq
+    [2] => qweqweqwewqe
+    [3] => sdadasdasd
+    [4] => semen@gmail.com
+    [5] => 09522311233
+    [6] => Seaman
+    [7] => OFW
+    [8] => OFW
+    [9] => 2025-10-10
+    [10] => 2000-02-04
+    [11] => Male
+    [12] => 123123
+    [13] => On Process
+)
+
+[11-Oct-2025 00:24:58 Europe/Berlin] Warning: Could not remove applicant: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hrms.applicants' doesn't exist
+[11-Oct-2025 00:24:58 Europe/Berlin] OFW successfully created with ID: 2, appID: OFW2510002
+[11-Oct-2025 00:24:58 Europe/Berlin] === DELETE APPLICANT REQUEST ===
+[11-Oct-2025 00:24:58 Europe/Berlin] Raw input: {"email":"semen@gmail.com","EmailAddress":"semen@gmail.com"}
+[11-Oct-2025 00:24:58 Europe/Berlin] Decoded data: Array
+(
+    [email] => semen@gmail.com
+    [EmailAddress] => semen@gmail.com
+)
+
+[11-Oct-2025 00:24:58 Europe/Berlin] Attempting to delete applicant with email: semen@gmail.com
+[11-Oct-2025 00:24:58 Europe/Berlin] Found applicant tables: applicant
+[11-Oct-2025 00:24:58 Europe/Berlin] Table 'applicants' does not exist, skipping
+[11-Oct-2025 00:24:58 Europe/Berlin] Table 'applicants' does not exist, skipping
+[11-Oct-2025 00:24:58 Europe/Berlin] Found record in applicant.EmailAddress: Array
+(
+    [ID] => 12
+    [appID] => PHR-003
+    [ProfilePicture] => uploads/1760133902_photo_2025-10-02_13-16-07.jpg
+    [FirstName] => sdasdadqweq
+    [MiddleName] => sdadasdasd
+    [LastName] => qweqweqwewqe
+    [Gender] => Male
+    [BirthDate] => 2000-02-04
+    [EmailAddress] => semen@gmail.com
+    [ContactNumber] => 09522311233
+    [HomeAddress] => 123123
+    [PositionApplied] => Seaman
+    [trainings] => 
+    [Company] => PeakHR
+)
+
+[11-Oct-2025 00:24:58 Europe/Berlin] DELETE executed on applicant.EmailAddress, rows affected: 1
+[11-Oct-2025 00:24:58 Europe/Berlin] ✅ SUCCESS: Deleted 1 row(s) from applicant.EmailAddress
+[11-Oct-2025 00:35:34 Europe/Berlin] Raw JSON input: {"employeeId":"2","status":"Deployed"}
+[11-Oct-2025 00:35:34 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 2
+    [status] => Deployed
+)
+
+[11-Oct-2025 00:35:34 Europe/Berlin] Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list'
+[11-Oct-2025 00:35:34 Europe/Berlin] Stack trace: #0 C:\Users\Mark V\OneDrive\Documents\GitHub\xampp\htdocs\HRMSbackend\statusofw.php(83): PDOStatement->execute(Array)
+#1 {main}
+[11-Oct-2025 00:35:37 Europe/Berlin] Raw JSON input: {"employeeId":"2","status":"Deployed"}
+[11-Oct-2025 00:35:37 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 2
+    [status] => Deployed
+)
+
+[11-Oct-2025 00:35:37 Europe/Berlin] Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list'
+[11-Oct-2025 00:35:37 Europe/Berlin] Stack trace: #0 C:\Users\Mark V\OneDrive\Documents\GitHub\xampp\htdocs\HRMSbackend\statusofw.php(83): PDOStatement->execute(Array)
+#1 {main}
+[11-Oct-2025 00:35:40 Europe/Berlin] Raw JSON input: {"employeeId":"2","status":"Deployed"}
+[11-Oct-2025 00:35:40 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 2
+    [status] => Deployed
+)
+
+[11-Oct-2025 00:35:40 Europe/Berlin] Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list'
+[11-Oct-2025 00:35:40 Europe/Berlin] Stack trace: #0 C:\Users\Mark V\OneDrive\Documents\GitHub\xampp\htdocs\HRMSbackend\statusofw.php(83): PDOStatement->execute(Array)
+#1 {main}
+[11-Oct-2025 00:35:42 Europe/Berlin] Raw JSON input: {"employeeId":"2","status":"Deployed"}
+[11-Oct-2025 00:35:42 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 2
+    [status] => Deployed
+)
+
+[11-Oct-2025 00:35:42 Europe/Berlin] Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list'
+[11-Oct-2025 00:35:42 Europe/Berlin] Stack trace: #0 C:\Users\Mark V\OneDrive\Documents\GitHub\xampp\htdocs\HRMSbackend\statusofw.php(83): PDOStatement->execute(Array)
+#1 {main}
+[11-Oct-2025 00:35:44 Europe/Berlin] Raw JSON input: {"employeeId":"2","status":"Deployed"}
+[11-Oct-2025 00:35:44 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 2
+    [status] => Deployed
+)
+
+[11-Oct-2025 00:35:44 Europe/Berlin] Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list'
+[11-Oct-2025 00:35:44 Europe/Berlin] Stack trace: #0 C:\Users\Mark V\OneDrive\Documents\GitHub\xampp\htdocs\HRMSbackend\statusofw.php(83): PDOStatement->execute(Array)
+#1 {main}
+[11-Oct-2025 01:34:45 Europe/Berlin] Raw JSON input: {"employeeId":"1","status":"Deployed"}
+[11-Oct-2025 01:34:45 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 1
+    [status] => Deployed
+)
+
+[11-Oct-2025 01:34:45 Europe/Berlin] Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list'
+[11-Oct-2025 01:34:45 Europe/Berlin] Stack trace: #0 C:\Users\Mark V\OneDrive\Documents\GitHub\xampp\htdocs\HRMSbackend\statusofw.php(83): PDOStatement->execute(Array)
+#1 {main}
+[11-Oct-2025 01:37:34 Europe/Berlin] Raw JSON input: {"employeeId":"1","status":"Deployed"}
+[11-Oct-2025 01:37:34 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 1
+    [status] => Deployed
+)
+
+[11-Oct-2025 01:37:34 Europe/Berlin] Status updated successfully for employee ID: 1 to status: Deployed
+[11-Oct-2025 01:37:41 Europe/Berlin] Raw JSON input: {"employeeId":"1","status":"On Process"}
+[11-Oct-2025 01:37:41 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 1
+    [status] => On Process
+)
+
+[11-Oct-2025 01:37:41 Europe/Berlin] Status updated successfully for employee ID: 1 to status: On Process
+[11-Oct-2025 01:38:22 Europe/Berlin] Raw JSON input: {"employeeId":"1","status":"Repatriated"}
+[11-Oct-2025 01:38:22 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 1
+    [status] => Repatriated
+)
+
+[11-Oct-2025 01:38:22 Europe/Berlin] Status updated successfully for employee ID: 1 to status: Repatriated
+[11-Oct-2025 01:38:29 Europe/Berlin] Raw JSON input: {"employeeId":"1","status":"On Process"}
+[11-Oct-2025 01:38:29 Europe/Berlin] Decoded data: Array
+(
+    [employeeId] => 1
+    [status] => On Process
+)
+
+[11-Oct-2025 01:38:29 Europe/Berlin] Status updated successfully for employee ID: 1 to status: On Process

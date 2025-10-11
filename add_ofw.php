@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 error_log("Request method: " . $_SERVER['REQUEST_METHOD']);
 error_log("Request URI: " . $_SERVER['REQUEST_URI']);
 
+
 if (isset($_GET['test'])) {
     try {
         $pdo = new PDO("mysql:host=localhost;dbname=hrms;charset=utf8mb4", 'root', '');
@@ -101,32 +102,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
        
         if (isset($data['employeeId']) && isset($data['status']) && count($data) == 2) {
-            
             $employeeId = $data['employeeId'];
             $status = $data['status'];
             
-            // Validate status values
+            
             $validStatuses = ['On Process', 'Deployed', 'Repatriated'];
             if (!in_array($status, $validStatuses)) {
                 throw new Exception('Invalid status. Must be: ' . implode(', ', $validStatuses));
             }
             
-            // Check if employee exists
-            $checkStmt = $pdo->prepare("SELECT id FROM ofw WHERE id = ?");
+       
+            $checkStmt = $pdo->prepare("SELECT ID FROM ofw WHERE ID = ?");
             $checkStmt->execute([$employeeId]);
             if (!$checkStmt->fetch()) {
                 throw new Exception('Employee not found with ID: ' . $employeeId);
             }
             
-            // Check if status column exists, if not add it
-            $columnCheck = $pdo->query("SHOW COLUMNS FROM ofw LIKE 'status'");
-            if ($columnCheck->rowCount() == 0) {
-                error_log("Adding status column to ofw table");
-                $pdo->exec("ALTER TABLE ofw ADD COLUMN status VARCHAR(50) DEFAULT 'On Process'");
-            }
-            
-            // Update the status
-            $updateStmt = $pdo->prepare("UPDATE ofw SET status = ?, updated_at = NOW() WHERE id = ?");
+       
+            $updateStmt = $pdo->prepare("UPDATE ofw SET status = ? WHERE ID = ?");
             $result = $updateStmt->execute([$status, $employeeId]);
             
             if ($result) {
@@ -152,86 +145,70 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
 
-        $checkStmt = $pdo->prepare("SELECT id FROM ofw WHERE email = ?");
+        
+        $checkStmt = $pdo->prepare("SELECT ID FROM ofw WHERE EmailAddress = ?");
         $checkStmt->execute([$data['email']]);
         if ($checkStmt->fetch()) {
             throw new Exception('An OFW with this email already exists');
         }
 
-        $birthDate = null;
-        if (!empty($data['birthYear']) && !empty($data['birthMonth']) && !empty($data['birthDay'])) {
-            $birthDate = sprintf('%04d-%02d-%02d', 
-                intval($data['birthYear']), 
-                intval($data['birthMonth']), 
-                intval($data['birthDay'])
-            );
-        }
 
-        $ofwId = null;
-        $nextNumber = 1;
+        $currentYear = date('y');   
+        $currentMonth = date('m'); 
+        $ofwPrefix = "OFW{$currentYear}{$currentMonth}";
         
-        while (true) {
-            $ofwId = 'OFW' . str_pad($nextNumber, 3, '0', STR_PAD_LEFT); 
-            
-            $idCheckStmt = $pdo->prepare("SELECT id FROM ofw WHERE employeeId = ?");
-            $idCheckStmt->execute([$ofwId]);
-            
-            if (!$idCheckStmt->fetch()) {
-                break;
-            }
-            
-            $nextNumber++;
-            
-            if ($nextNumber > 999999) {
-                throw new Exception('Maximum OFW ID limit reached. Please contact administrator.');
-            }
+       
+        $countStmt = $pdo->prepare("
+            SELECT appID FROM ofw 
+            WHERE appID LIKE ? 
+            ORDER BY appID DESC 
+            LIMIT 1
+        ");
+        $countStmt->execute([$ofwPrefix . '%']);
+        $lastOfw = $countStmt->fetch(PDO::FETCH_ASSOC);
+        
+        if ($lastOfw && $lastOfw['appID']) {
+        
+            $lastNumber = intval(substr($lastOfw['appID'], -3));
+            $nextNumber = $lastNumber + 1;
+        } else {
+           
+            $nextNumber = 1;
         }
         
-        error_log("Generated sequential OFW ID: $ofwId");
-
+    
+        $generatedOfwId = $ofwPrefix . str_pad($nextNumber, 3, '0', STR_PAD_LEFT);
+        
+        error_log("Generated OFW ID: $generatedOfwId for year-month: {$currentYear}{$currentMonth}");
+        
+        
         $insertData = [
-            $ofwId,
-            $data['firstName'],
-            $data['lastName'], 
-            $data['email'],
-            $data['phone'],
-            $data['position'],
-            $data['department'] ?? 'OFW',
-            'OFW',
-            $data['dateHired'] ?? date('Y-m-d'),
-            $birthDate,
-            $data['gender'] ?? null,
-            $data['street1'] ?? null,
-            $data['street2'] ?? null,
-            $data['city'] ?? null,
-            $data['state'] ?? null,
-            $data['zip'] ?? null,
-            $data['profilePicture'] ?? null,
-            $data['resumeUrl'] ?? null,
-            $data['passport'] ?? null,
-            $data['diploma'] ?? null,
-            $data['tor'] ?? null,
-            $data['medical'] ?? null,
-            $data['tinId'] ?? null,
-            $data['nbiClearance'] ?? null,
-            $data['policeClearance'] ?? null,
-            $data['pagibigNumber'] ?? null,
-            $data['philhealthNumber'] ?? null
+            $generatedOfwId,                                
+            $data['firstName'],                             
+            $data['lastName'],                             
+            $data['middleName'] ?? '',                      
+            $data['email'],                                
+            $data['phone'],                                 
+            $data['position'],                            
+            $data['department'] ?? 'OFW',                    
+            $data['employeeType'] ?? 'OFW',                  
+            $data['dateHired'] ?? date('Y-m-d'),           
+            $data['birthDate'] ?? null,                     
+            $data['gender'] ?? null,                         
+            $data['homeAddress'] ?? null,                    
+            $data['status'] ?? 'On Process'                  
         ];
         
         error_log("Insert data: " . print_r($insertData, true));
 
+       
         $insertStmt = $pdo->prepare("
             INSERT INTO ofw (
-                employeeId, firstName, lastName, email, phone, position, 
-                department, employeeType, dateHired, birthDate, gender,
-                street1, street2, city, state, zip, profilePicture, resumeUrl,
-                passport, diploma, tor, medical, tinId, nbiClearance, 
-                policeClearance, pagibigNumber, philhealthNumber,
-                created_at
+                appID, FirstName, LastName, MiddleName, EmailAddress, ContactNumber, 
+                PositionApplied, Department, employeeType, dateHired, Birthdate, 
+                Gender, HomeAddress, status
             ) VALUES (
-                ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 
-                ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW()
+                ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
             )
         ");
 
@@ -240,8 +217,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($result) {
             $newOfwId = $pdo->lastInsertId();
             
+           
             try {
-                $deleteStmt = $pdo->prepare("DELETE FROM applicants WHERE email = ?");
+                $deleteStmt = $pdo->prepare("DELETE FROM applicants WHERE EmailAddress = ?");
                 $deleteStmt->execute([$data['email']]);
                 $applicantRemoved = true;
                 error_log("Successfully removed applicant with email: " . $data['email']);
@@ -250,22 +228,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $applicantRemoved = false;
             }
 
-            $documentCount = 0;
-            $documentFields = ['resumeUrl', 'passport', 'diploma', 'tor', 'medical', 'tinId', 'nbiClearance', 'policeClearance', 'pagibigNumber', 'philhealthNumber'];
-            foreach ($documentFields as $field) {
-                if (!empty($data[$field])) {
-                    $documentCount++;
-                }
-            }
-
-            error_log("OFW successfully created with ID: $newOfwId, Employee ID: $ofwId");
+            error_log("OFW successfully created with ID: $newOfwId, appID: $generatedOfwId");
 
             echo json_encode([
                 'success' => true,
-                'message' => 'OFW added successfully with all documents',
+                'message' => 'OFW added successfully',
                 'ofw_id' => $newOfwId,
-                'employee_id' => $ofwId,
-                'documents_saved' => $documentCount,
+                'app_id' => $generatedOfwId,
                 'applicant_removed' => $applicantRemoved
             ]);
         } else {

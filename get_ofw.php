@@ -31,23 +31,54 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     try {
         $stmt = $pdo->prepare("
             SELECT 
-                id, employeeId, firstName, lastName, email, phone, position,
-                department, employeeType, dateHired, birthDate, gender,
-                street1, street2, city, state, zip, profilePicture,
-                resumeUrl, passport, diploma, tor, medical, tinId,
-                nbiClearance, policeClearance, pagibigNumber, philhealthNumber,
-                status, created_at
+                ID, 
+                appID, 
+                FirstName, 
+                LastName, 
+                MiddleName, 
+                EmailAddress, 
+                ContactNumber, 
+                PositionApplied,
+                Department, 
+                employeeType, 
+                dateHired, 
+                Birthdate, 
+                Gender, 
+                HomeAddress, 
+                status
             FROM ofw 
-            ORDER BY created_at DESC
+            ORDER BY ID ASC
         ");
         
         $stmt->execute();
         $ofwRecords = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
+        
+        $mappedRecords = array_map(function($record) {
+            return [
+                'id' => $record['ID'],
+                'employeeId' => $record['appID'],
+                'firstName' => $record['FirstName'],
+                'lastName' => $record['LastName'],
+                'middleName' => $record['MiddleName'],
+                'email' => $record['EmailAddress'],
+                'phone' => $record['ContactNumber'],
+                'position' => $record['PositionApplied'],
+                'department' => $record['Department'],
+                'employeeType' => $record['employeeType'],
+                'dateHired' => $record['dateHired'],
+                'birthDate' => $record['Birthdate'],
+                'gender' => $record['Gender'],
+                'street1' => $record['HomeAddress'], 
+                'status' => $record['status'],
+                'profilePicture' => null 
+            ];
+        }, $ofwRecords);
+        
         echo json_encode([
             'success' => true,
-            'data' => $ofwRecords,
-            'count' => count($ofwRecords)
+            'data' => $mappedRecords,
+            'count' => count($mappedRecords)
         ]);
         
     } catch (Exception $e) {
