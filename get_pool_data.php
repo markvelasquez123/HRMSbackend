@@ -1,44 +1,55 @@
 <?php
+require_once 'var.php';
+
+$http_origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
+
+
+if (in_array($http_origin, $IP_THIS)) {
+    header("Access-Control-Allow-Origin: $http_origin");
+    } else {
+    
+    error_log("Unauthorized CORS request from origin: " . $http_origin);
+}
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: http://localhost:3000');
+
 header('Access-Control-Allow-Methods: GET, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 header('Access-Control-Allow-Credentials: true');
 
-// Enable error reporting for debugging
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Log all requests for debugging
+
 error_log("Get Pool Data API called - Method: " . $_SERVER['REQUEST_METHOD']);
 
-// Handle preflight OPTIONS request
+
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
 
-// Only allow GET requests
+
 if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     http_response_code(405);
     echo json_encode(['success' => false, 'message' => 'Method not allowed']);
     exit();
 }
 
-// Database configuration
+
 $host = 'localhost';
-$dbname = 'hrms';  // Your database name
-$username = 'root'; // Your database username
-$password = '';     // Your database password
+$dbname = 'hrms';  
+$username = 'root'; 
+$password = '';    
 
 try {
-    // Create PDO connection
+  
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     error_log("Database connection successful for get_pool_data");
     
-    // Check if pool table exists
+    
     $tableCheck = $pdo->query("SHOW TABLES LIKE 'pool'");
     if ($tableCheck->rowCount() == 0) {
         throw new Exception('Pool table does not exist in database');
@@ -46,7 +57,7 @@ try {
     
     error_log("Pool table exists, fetching data");
     
-    // Fetch all pool records ordered by created_at DESC (newest first)
+   
     $stmt = $pdo->prepare("
         SELECT 
             name,
@@ -66,7 +77,7 @@ try {
     
     error_log("Fetched " . count($poolRecords) . " pool records");
     
-    // Format the data for frontend
+  
     $formattedData = [];
     foreach ($poolRecords as $record) {
         $formattedData[] = [
@@ -81,7 +92,7 @@ try {
         ];
     }
     
-    // Return success response
+   
     echo json_encode([
         'success' => true,
         'message' => 'Pool data fetched successfully',

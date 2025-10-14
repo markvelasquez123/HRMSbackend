@@ -1,5 +1,18 @@
 <?php
-header("Access-Control-Allow-Origin: http://localhost:3000");
+
+
+require_once 'var.php';
+
+$http_origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
+
+
+if (in_array($http_origin, $IP_THIS)) {
+    header("Access-Control-Allow-Origin: $http_origin");
+    } else {
+    
+    error_log("Unauthorized CORS request from origin: " . $http_origin);
+}
+
 header("Access-Control-Allow-Methods: POST, OPTIONS, GET");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 header('Content-Type: application/json');
