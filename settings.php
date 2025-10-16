@@ -30,6 +30,59 @@ try {
 $method = $_SERVER['REQUEST_METHOD'];
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 
+// ADD THIS LOGIN ENDPOINT TO YOUR LOGIN PHP FILE (e.g., login.php)
+// This is an EXAMPLE of what your login endpoint should include
+if ($method === 'POST' && $action === 'login') {
+    $data = json_decode(file_get_contents('php://input'), true);
+    
+    $identifier = isset($data['identifier']) ? trim($data['identifier']) : ''; // Email or Company ID
+    $password = isset($data['password']) ? $data['password'] : '';
+    
+    if (!$identifier || !$password) {
+        echo json_encode(['success' => false, 'message' => 'All fields are required']);
+        exit();
+    }
+    
+    try {
+        // Check if identifier is email or company ID
+        $stmt = $pdo->prepare("SELECT ID, fullname, EmailAddress, IDNumber, password, status FROM signup WHERE EmailAddress = ? OR IDNumber = ?");
+        $stmt->execute([$identifier, $identifier]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if (!$user) {
+            echo json_encode(['success' => false, 'message' => 'Invalid credentials']);
+            exit();
+        }
+        
+        // Verify password
+        if (password_verify($password, $user['password']) || $password === $user['password']) {
+            
+            // REACTIVATE ACCOUNT IF IT WAS DEACTIVATED
+            if ($user['status'] === 'deactivated') {
+                $stmt = $pdo->prepare("UPDATE signup SET status = 'active' WHERE ID = ?");
+                $stmt->execute([$user['ID']]);
+                
+                error_log("Account reactivated for user ID: " . $user['ID']);
+            }
+            
+            echo json_encode([
+                'success' => true, 
+                'message' => 'Login successful',
+                'data' => [
+                    'id' => $user['ID'],
+                    'fullname' => $user['fullname'],
+                    'email' => $user['EmailAddress'],
+                    'companyId' => $user['IDNumber'],
+                    'status' => 'active' // Return active status
+                ]
+            ]);
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Invalid credentials']);
+        }
+    } catch(PDOException $e) {
+        echo json_encode(['success' => false, 'message' => 'Error during login: ' . $e->getMessage()]);
+    }
+}
 
 if ($method === 'GET' && $action === 'getProfile') {
     $companyId = isset($_GET['companyId']) ? $_GET['companyId'] : null;
@@ -79,7 +132,6 @@ if ($method === 'GET' && $action === 'getProfile') {
     }
 }
 
-
 if ($method === 'POST' && $action === 'verifyCompanyId') {
     $data = json_decode(file_get_contents('php://input'), true);
     
@@ -110,7 +162,6 @@ if ($method === 'POST' && $action === 'verifyCompanyId') {
     }
 }
 
-
 if ($method === 'POST' && $action === 'updateProfile') {
     $data = json_decode(file_get_contents('php://input'), true);
     
@@ -131,7 +182,6 @@ if ($method === 'POST' && $action === 'updateProfile') {
     }
     
     try {
-        // Get user by Company ID
         $stmt = $pdo->prepare("SELECT ID, IDNumber FROM signup WHERE IDNumber = ?");
         $stmt->execute([$companyId]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -143,7 +193,6 @@ if ($method === 'POST' && $action === 'updateProfile') {
         
         $userId = $user['ID'];
         
-        // Check if email is already in use by another user
         $stmt = $pdo->prepare("SELECT ID FROM signup WHERE EmailAddress = ? AND ID != ?");
         $stmt->execute([$email, $userId]);
         if ($stmt->fetch()) {
@@ -151,7 +200,6 @@ if ($method === 'POST' && $action === 'updateProfile') {
             exit();
         }
         
-        // Check if new Company ID is already in use by another user
         if ($newCompanyId && $newCompanyId !== $companyId) {
             $stmt = $pdo->prepare("SELECT ID FROM signup WHERE IDNumber = ? AND ID != ?");
             $stmt->execute([$newCompanyId, $userId]);
@@ -172,7 +220,6 @@ if ($method === 'POST' && $action === 'updateProfile') {
         echo json_encode(['success' => false, 'message' => 'Error updating profile: ' . $e->getMessage()]);
     }
 }
-
 
 if ($method === 'POST' && $action === 'changePassword') {
     $data = json_decode(file_get_contents('php://input'), true);
@@ -207,12 +254,11 @@ if ($method === 'POST' && $action === 'changePassword') {
             exit();
         }
         
-        // Verify old password
+        // Verify old password (supports both plain text and hashed passwords)
         if (password_verify($oldPassword, $user['password']) || $oldPassword === $user['password']) {
-            $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
-            
+            // Store new password as plain text (matching your login.php logic)
             $stmt = $pdo->prepare("UPDATE signup SET password = ? WHERE ID = ?");
-            $stmt->execute([$hashedPassword, $user['ID']]);
+            $stmt->execute([$newPassword, $user['ID']]);
             
             echo json_encode(['success' => true, 'message' => 'Password updated successfully']);
         } else {
@@ -222,7 +268,6 @@ if ($method === 'POST' && $action === 'changePassword') {
         echo json_encode(['success' => false, 'message' => 'Error changing password: ' . $e->getMessage()]);
     }
 }
-
 
 if ($method === 'POST' && $action === 'deactivateAccount') {
     $data = json_decode(file_get_contents('php://input'), true);
@@ -245,7 +290,6 @@ if ($method === 'POST' && $action === 'deactivateAccount') {
             exit();
         }
         
-        // Verify password
         if (password_verify($password, $user['password']) || $password === $user['password']) {
             $stmt = $pdo->prepare("UPDATE signup SET status = 'deactivated' WHERE ID = ?");
             $stmt->execute([$user['ID']]);
@@ -258,7 +302,6 @@ if ($method === 'POST' && $action === 'deactivateAccount') {
         echo json_encode(['success' => false, 'message' => 'Error deactivating account: ' . $e->getMessage()]);
     }
 }
-
 
 if ($method === 'POST' && $action === 'deleteAccount') {
     $data = json_decode(file_get_contents('php://input'), true);
@@ -281,7 +324,6 @@ if ($method === 'POST' && $action === 'deleteAccount') {
             exit();
         }
         
-        // Verify password
         if (password_verify($password, $user['password']) || $password === $user['password']) {
             $stmt = $pdo->prepare("DELETE FROM signup WHERE ID = ?");
             $stmt->execute([$user['ID']]);

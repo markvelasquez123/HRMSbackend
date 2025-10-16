@@ -1,13 +1,12 @@
 <?php
+// get_ofw.php - OFW API with Admin access
 require_once 'var.php';
 
 $http_origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
 
-
 if (in_array($http_origin, $IP_THIS)) {
     header("Access-Control-Allow-Origin: $http_origin");
-    } else {
-    
+} else {
     error_log("Unauthorized CORS request from origin: " . $http_origin);
 }
 header('Content-Type: application/json');
@@ -40,30 +39,82 @@ try {
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     try {
-        $stmt = $pdo->prepare("
-            SELECT 
-                ID, 
-                appID, 
-                FirstName, 
-                LastName, 
-                MiddleName, 
-                EmailAddress, 
-                ContactNumber, 
-                PositionApplied,
-                Department, 
-                employeeType, 
-                dateHired, 
-                Birthdate, 
-                Gender, 
-                HomeAddress, 
-                status
-            FROM ofw 
-            ORDER BY ID ASC
-        ");
+        // Get org parameter
+        $orgPrefix = isset($_GET['org']) ? $_GET['org'] : null;
         
-        $stmt->execute();
+        // If Admin, get all OFW records; otherwise filter by appID prefix
+        if ($orgPrefix === 'Admin') {
+            $stmt = $pdo->prepare("
+                SELECT 
+                    ID, 
+                    appID, 
+                    FirstName, 
+                    LastName, 
+                    MiddleName, 
+                    EmailAddress, 
+                    ContactNumber, 
+                    PositionApplied,
+                    Department, 
+                    employeeType, 
+                    dateHired, 
+                    Birthdate, 
+                    Gender, 
+                    HomeAddress, 
+                    status
+                FROM ofw 
+                ORDER BY ID ASC
+            ");
+            $stmt->execute();
+        } else if ($orgPrefix && in_array($orgPrefix, ['RGL', 'ASN', 'PHR'])) {
+            $stmt = $pdo->prepare("
+                SELECT 
+                    ID, 
+                    appID, 
+                    FirstName, 
+                    LastName, 
+                    MiddleName, 
+                    EmailAddress, 
+                    ContactNumber, 
+                    PositionApplied,
+                    Department, 
+                    employeeType, 
+                    dateHired, 
+                    Birthdate, 
+                    Gender, 
+                    HomeAddress, 
+                    status
+                FROM ofw 
+                WHERE appID LIKE ?
+                ORDER BY ID ASC
+            ");
+            $searchPattern = $orgPrefix . '-%';
+            $stmt->execute([$searchPattern]);
+        } else {
+            // Default: get all if no valid org specified
+            $stmt = $pdo->prepare("
+                SELECT 
+                    ID, 
+                    appID, 
+                    FirstName, 
+                    LastName, 
+                    MiddleName, 
+                    EmailAddress, 
+                    ContactNumber, 
+                    PositionApplied,
+                    Department, 
+                    employeeType, 
+                    dateHired, 
+                    Birthdate, 
+                    Gender, 
+                    HomeAddress, 
+                    status
+                FROM ofw 
+                ORDER BY ID ASC
+            ");
+            $stmt->execute();
+        }
+        
         $ofwRecords = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
         
         $mappedRecords = array_map(function($record) {
             return [

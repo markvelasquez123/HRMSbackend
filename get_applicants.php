@@ -1,15 +1,14 @@
 <?php
+// get_applicants.php - Applicant API with Admin access
 session_start();
 
 require_once 'var.php';
 
 $http_origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
 
-
 if (in_array($http_origin, $IP_THIS)) {
     header("Access-Control-Allow-Origin: $http_origin");
-    } else {
-    
+} else {
     error_log("Unauthorized CORS request from origin: " . $http_origin);
 }
 header("Access-Control-Allow-Methods: POST, OPTIONS, GET");
@@ -21,11 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-// Get organization prefix from query parameter
 $orgPrefix = isset($_GET['org']) ? $_GET['org'] : null;
 
 // Validate the prefix
-$validPrefixes = ['RGL', 'ASN', 'PHR'];
+$validPrefixes = ['RGL', 'ASN', 'PHR', 'Admin'];
 if (!$orgPrefix || !in_array($orgPrefix, $validPrefixes)) {
     http_response_code(400);
     echo json_encode(['error' => 'Invalid organization prefix']);
@@ -45,16 +43,24 @@ if ($conn->connect_error) {
     exit();
 }
 
-// CRITICAL: Filter by appID prefix using LIKE
-$sql = "SELECT 
-    appID, ProfilePicture, FirstName, MiddleName, LastName, Gender, PositionApplied, 
-    EmailAddress, ContactNumber, HomeAddress, BirthDate
-FROM applicant
-WHERE appID LIKE ?";
+// If Admin, get all applicants; otherwise filter by prefix
+if ($orgPrefix === 'Admin') {
+    $sql = "SELECT 
+        appID, ProfilePicture, FirstName, MiddleName, LastName, Gender, PositionApplied, 
+        EmailAddress, ContactNumber, HomeAddress, BirthDate
+    FROM applicant";
+    $stmt = $conn->prepare($sql);
+} else {
+    $sql = "SELECT 
+        appID, ProfilePicture, FirstName, MiddleName, LastName, Gender, PositionApplied, 
+        EmailAddress, ContactNumber, HomeAddress, BirthDate
+    FROM applicant
+    WHERE appID LIKE ?";
+    $searchPattern = $orgPrefix . '-%';
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $searchPattern);
+}
 
-$searchPattern = $orgPrefix . '-%'; // "RGL-%" or "ASN-%" or "PHR-%"
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $searchPattern);
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -78,13 +84,16 @@ if ($result && $result->num_rows > 0) {
     }
 }
 
-// Also filter requirements by appID prefix
-$sql = "SELECT r.*
-FROM requirements r
-WHERE r.appID LIKE ?";
+// Also filter requirements by appID prefix or get all for Admin
+if ($orgPrefix === 'Admin') {
+    $sql = "SELECT r.* FROM requirements r";
+    $stmt = $conn->prepare($sql);
+} else {
+    $sql = "SELECT r.* FROM requirements r WHERE r.appID LIKE ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $searchPattern);
+}
 
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $searchPattern);
 $stmt->execute();
 $result = $stmt->get_result();
 

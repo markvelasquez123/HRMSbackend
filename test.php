@@ -1,15 +1,14 @@
 <?php
+// test.php - Employee API with Admin access
 session_start();
 
 require_once 'var.php';
 
 $http_origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
 
-
 if (in_array($http_origin, $IP_THIS)) {
     header("Access-Control-Allow-Origin: $http_origin");
-    } else {
-    
+} else {
     error_log("Unauthorized CORS request from origin: " . $http_origin);
 }
 
@@ -25,7 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 $orgPrefix = isset($_GET['org']) ? $_GET['org'] : null;
 
-$validPrefixes = ['RGL', 'ASN', 'PHR'];
+// Admin can access all, regular users need valid prefix
+$validPrefixes = ['RGL', 'ASN', 'PHR', 'Admin'];
 if (!$orgPrefix || !in_array($orgPrefix, $validPrefixes)) {
     http_response_code(400);
     echo json_encode(['error' => 'Invalid organization prefix']);
@@ -44,12 +44,17 @@ if ($conn->connect_error) {
     exit();
 }
 
+// If Admin, get all employees; otherwise filter by prefix
+if ($orgPrefix === 'Admin') {
+    $sql = "SELECT * FROM employeee";
+    $stmt = $conn->prepare($sql);
+} else {
+    $sql = "SELECT * FROM employeee WHERE IDNumber LIKE ?";
+    $searchPattern = $orgPrefix . '%';
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $searchPattern);
+}
 
-$sql = "SELECT * FROM employeee WHERE IDNumber LIKE ?";
-
-$searchPattern = $orgPrefix . '%'; 
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $searchPattern);
 $stmt->execute();
 $result = $stmt->get_result();
 

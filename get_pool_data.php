@@ -1,13 +1,12 @@
 <?php
+// get_pool_data.php - Pool API with Admin access
 require_once 'var.php';
 
 $http_origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
 
-
 if (in_array($http_origin, $IP_THIS)) {
     header("Access-Control-Allow-Origin: $http_origin");
-    } else {
-    
+} else {
     error_log("Unauthorized CORS request from origin: " . $http_origin);
 }
 header('Content-Type: application/json');
@@ -16,19 +15,15 @@ header('Access-Control-Allow-Methods: GET, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 header('Access-Control-Allow-Credentials: true');
 
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-
 error_log("Get Pool Data API called - Method: " . $_SERVER['REQUEST_METHOD']);
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
-
 
 if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     http_response_code(405);
@@ -36,19 +31,16 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     exit();
 }
 
-
 $host = 'localhost';
 $dbname = 'hrms';  
 $username = 'root'; 
 $password = '';    
 
 try {
-  
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     error_log("Database connection successful for get_pool_data");
-    
     
     $tableCheck = $pdo->query("SHOW TABLES LIKE 'pool'");
     if ($tableCheck->rowCount() == 0) {
@@ -57,7 +49,8 @@ try {
     
     error_log("Pool table exists, fetching data");
     
-   
+    // Admin gets all data, no filtering needed for pool table
+    // Pool table doesn't have org prefix, so Admin sees everything by default
     $stmt = $pdo->prepare("
         SELECT 
             name,
@@ -77,7 +70,6 @@ try {
     
     error_log("Fetched " . count($poolRecords) . " pool records");
     
-  
     $formattedData = [];
     foreach ($poolRecords as $record) {
         $formattedData[] = [
@@ -92,7 +84,6 @@ try {
         ];
     }
     
-   
     echo json_encode([
         'success' => true,
         'message' => 'Pool data fetched successfully',

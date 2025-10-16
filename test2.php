@@ -1,15 +1,11 @@
 <?php
-
-
 require_once 'var.php';
 
 $http_origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
 
-
 if (in_array($http_origin, $IP_THIS)) {
     header("Access-Control-Allow-Origin: $http_origin");
-    } else {
-    
+} else {
     error_log("Unauthorized CORS request from origin: " . $http_origin);
 }
 header('Content-Type: application/json');
@@ -42,6 +38,19 @@ try {
     
     function GenerateIDNumber($pdo, $company, $dateHired) {
         $companyPrefix = '';
+        
+        // Handle Admin company differently
+        if ($company === 'Admin') {
+            // Get the count of Admin employees
+            $stmt = $pdo->prepare("SELECT COUNT(*) as total FROM employeee WHERE Company = 'Admin'");
+            $stmt->execute();
+            $adminCount = $stmt->fetchColumn();
+            
+            $sequence = str_pad($adminCount + 1, 2, '0', STR_PAD_LEFT);
+            return 'AdminIT' . $sequence;
+        }
+        
+        // Original logic for other companies
         switch ($company) {
             case 'Asia Navis':
                 $companyPrefix = 'ASN';
@@ -52,14 +61,18 @@ try {
             case 'PeakHR':
                 $companyPrefix = 'PHR';
                 break;
+            default:
+                // For custom companies, use first 3 letters uppercase
+                $companyPrefix = strtoupper(substr($company, 0, 3));
+                break;
         }
 
         $hireDate = new DateTime($dateHired);
         $year = $hireDate->format('y');   
         $month = $hireDate->format('m');
         
-        $stmt = $pdo->prepare("SELECT COUNT(*) as total FROM employeee");
-        $stmt->execute();
+        $stmt = $pdo->prepare("SELECT COUNT(*) as total FROM employeee WHERE Company = ?");
+        $stmt->execute([$company]);
         $employeeCount = $stmt->fetchColumn();  
         
         $sequence = str_pad($employeeCount + 1, 3, '0', STR_PAD_LEFT);
@@ -91,6 +104,7 @@ try {
         error_log("Generated IDNumber: " . $idNumber);
         error_log("FirstName: " . $firstName);
         error_log("LastName: " . $lastName);
+        error_log("Company: " . $company);
         
         $checkStmt = $pdo->prepare("SELECT COUNT(*) FROM employeee WHERE IDNumber = :idNumber");
         $checkStmt->execute([':idNumber' => $idNumber]);
@@ -132,7 +146,7 @@ try {
                 'success' => true,
                 'message' => 'Employee added successfully',
                 'employeeId' => $pdo->lastInsertId(),
-                'idNumber' => $idNumber
+                'IDNumber' => $idNumber
             ]);
         } else {
             throw new Exception('Failed to add employee');

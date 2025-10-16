@@ -2154,3 +2154,67 @@
 )
 
 [11-Oct-2025 01:38:29 Europe/Berlin] Status updated successfully for employee ID: 1 to status: On Process
+[15-Oct-2025 23:54:58 Europe/Berlin] === DELETE APPLICANT REQUEST ===
+[15-Oct-2025 23:54:58 Europe/Berlin] Raw input: {"email":"marino1@gmail.com","EmailAddress":"marino1@gmail.com"}
+[15-Oct-2025 23:54:58 Europe/Berlin] Decoded data: Array
+(
+    [email] => marino1@gmail.com
+    [EmailAddress] => marino1@gmail.com
+)
+
+[15-Oct-2025 23:54:58 Europe/Berlin] Attempting to delete applicant with email: marino1@gmail.com
+[15-Oct-2025 23:54:58 Europe/Berlin] Found applicant tables: applicant
+[15-Oct-2025 23:54:58 Europe/Berlin] Table 'applicants' does not exist, skipping
+[15-Oct-2025 23:54:58 Europe/Berlin] Table 'applicants' does not exist, skipping
+[15-Oct-2025 23:54:58 Europe/Berlin] Found record in applicant.EmailAddress: Array
+(
+    [ID] => 10
+    [appID] => PHR-001
+    [ProfilePicture] => uploads/1760132440_photo_2025-10-02_13-16-07.jpg
+    [FirstName] => Lakbay
+    [MiddleName] => Sea
+    [LastName] => Dagat
+    [Gender] => Male
+    [BirthDate] => 2000-02-05
+    [EmailAddress] => marino1@gmail.com
+    [ContactNumber] => 09523211233
+    [HomeAddress] => 5125125
+    [PositionApplied] => Seaman
+    [trainings] => 
+    [Company] => PeakHR
+)
+
+[15-Oct-2025 23:54:58 Europe/Berlin] DELETE executed on applicant.EmailAddress, rows affected: 1
+[15-Oct-2025 23:54:58 Europe/Berlin] ✅ SUCCESS: Deleted 1 row(s) from applicant.EmailAddress
+[15-Oct-2025 23:57:09 Europe/Berlin] === DELETE APPLICANT REQUEST ===
+[15-Oct-2025 23:57:09 Europe/Berlin] Raw input: {"email":"swim@gmail.com","EmailAddress":"swim@gmail.com"}
+[15-Oct-2025 23:57:09 Europe/Berlin] Decoded data: Array
+(
+    [email] => swim@gmail.com
+    [EmailAddress] => swim@gmail.com
+)
+
+[15-Oct-2025 23:57:09 Europe/Berlin] Attempting to delete applicant with email: swim@gmail.com
+[15-Oct-2025 23:57:09 Europe/Berlin] Found applicant tables: applicant
+[15-Oct-2025 23:57:09 Europe/Berlin] Table 'applicants' does not exist, skipping
+[15-Oct-2025 23:57:09 Europe/Berlin] Table 'applicants' does not exist, skipping
+[15-Oct-2025 23:57:09 Europe/Berlin] Found record in applicant.EmailAddress: Array
+(
+    [ID] => 11
+    [appID] => PHR-002
+    [ProfilePicture] => uploads/1760133318_unnamed.png
+    [FirstName] => Swim
+    [MiddleName] => Mer
+    [LastName] => Sea
+    [Gender] => Male
+    [BirthDate] => 2000-02-05
+    [EmailAddress] => swim@gmail.com
+    [ContactNumber] => 09425211233
+    [HomeAddress] => 123123123
+    [PositionApplied] => Seamn
+    [trainings] => 
+    [Company] => PeakHR
+)
+
+[15-Oct-2025 23:57:09 Europe/Berlin] DELETE executed on applicant.EmailAddress, rows affected: 1
+[15-Oct-2025 23:57:09 Europe/Berlin] ✅ SUCCESS: Deleted 1 row(s) from applicant.EmailAddress

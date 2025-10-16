@@ -3,11 +3,9 @@ require_once 'var.php';
 
 $http_origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
 
-
 if (in_array($http_origin, $IP_THIS)) {
     header("Access-Control-Allow-Origin: $http_origin");
-    } else {
-    
+} else {
     error_log("Unauthorized CORS request from origin: " . $http_origin);
 }
 header("Access-Control-Allow-Methods: POST, OPTIONS");
@@ -30,7 +28,6 @@ if ($conn->connect_error) {
     exit();
 }
 
-
 $data = json_decode(file_get_contents("php://input"), true);
 
 if (!$data || !isset($data['EmailAddress'], $data['password'])) {
@@ -41,8 +38,8 @@ if (!$data || !isset($data['EmailAddress'], $data['password'])) {
 $EmailAddress = $data['EmailAddress'];
 $password = $data['password'];
 
-
-$stmt = $conn->prepare("SELECT EmailAddress, password FROM signup WHERE EmailAddress = ?");
+// Updated query to include ID and status
+$stmt = $conn->prepare("SELECT ID, EmailAddress, password, status FROM signup WHERE EmailAddress = ?");
 $stmt->bind_param("s", $EmailAddress);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -50,9 +47,29 @@ $result = $stmt->get_result();
 if ($result->num_rows === 1) {
     $user = $result->fetch_assoc();
     
-    
+    // Verify password
     if ($password === $user['password']) {
-        echo json_encode(['success' => true, 'message' => 'Login successful', 'EmailAddress' => $user['EmailAddress']]);
+        
+        // REACTIVATE ACCOUNT IF IT WAS DEACTIVATED
+        if (isset($user['status']) && $user['status'] === 'deactivated') {
+            $updateStmt = $conn->prepare("UPDATE signup SET status = 'active' WHERE ID = ?");
+            $updateStmt->bind_param("i", $user['ID']);
+            
+            if ($updateStmt->execute()) {
+                error_log("✅ Account reactivated for user ID: " . $user['ID'] . " - Email: " . $user['EmailAddress']);
+            } else {
+                error_log("❌ Failed to reactivate account for user ID: " . $user['ID']);
+            }
+            
+            $updateStmt->close();
+        }
+        
+        echo json_encode([
+            'success' => true, 
+            'message' => 'Login successful', 
+            'EmailAddress' => $user['EmailAddress'],
+            'status' => 'active' // Always return active after successful login
+        ]);
     } else {
         echo json_encode(['success' => false, 'message' => 'Incorrect password']);
     }
